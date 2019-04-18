@@ -7,7 +7,13 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter as Router } from 'react-router-dom';
+import store from "./redux/store";
+import { Provider } from "react-redux";
 
+//Enable state logging for debugging purposes
+if(process.env.NODE_ENV === "DEVELOPMENT") {
+    store.subscribe(() => console.dir(store.getState()));
+}
 
-ReactDOM.render(<Router><App /></Router>, document.getElementById('root'));
+ReactDOM.render(<Provider store={store}><Router><App /></Router></Provider>, document.getElementById('root'));
 registerServiceWorker();
