@@ -1,11 +1,11 @@
 import React from "react";
-import AuthButtons from "../stateful/AuthButtons";
+import Auth from "../stateful/Auth";
 
 const IntroPage = () => {
   return (
     <React.Fragment>
       <div className="tc">
-        <AuthButtons />
+        <Auth />
       </div>
     </React.Fragment>
   );
