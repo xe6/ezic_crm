@@ -1,7 +1,8 @@
 //IMPORT TYPES HERE
 
 const initialState = {
-    loggedIn: false
+    authenticated: false,
+    user_data: null
 }
 
 const authReducer = (state = initialState, action = {}) => {

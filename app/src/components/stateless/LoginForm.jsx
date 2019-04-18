@@ -45,7 +45,7 @@ const LoginForm = (props) => {
 
               <div className="text-center mt-4">
                 <MDBBtn
-                  color="light-blue"
+                  color="success"
                   className="mb-3"
                   type="submit"
                 >
