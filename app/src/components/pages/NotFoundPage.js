@@ -9,7 +9,7 @@ const NotFoundPage =  () => {
     <React.Fragment>
       <div className="full">
         <MDBRow className="bad-gateway-row">
-          <MDBCol md="8">
+          <MDBCol style={{color: "#fff"}} md="8">
             <img alt="Error 404" className="img-thumbnail" hieght="200px" width="200px" src={logo}/>
             <h2 className="h2-responsive mt-3 mb-2">404. That's an error.</h2>
             <h4>The requested URL cannot be rendered.</h4>

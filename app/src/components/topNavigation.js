@@ -20,7 +20,7 @@ class TopNavigation extends Component {
 
     render() {
         return (
-            <MDBNavbar className="flexible-navbar" light expand="md" scrolling>
+            <MDBNavbar className="flexible-navbar" dark expand="md" scrolling>
                 <MDBNavbarBrand href="/">
                     <strong>EZIC</strong>
                 </MDBNavbarBrand>
