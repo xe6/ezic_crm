@@ -9,8 +9,8 @@ srv.use(bodyParser.urlencoded({ extended: true }));
 //=====================================================
 
 //==================|Mounting Routes|==================
-const Routes = require(`${__dirname}/routes/api`);
-srv.use('/', Routes); //Mount
+const ApiRoutes = require(`${__dirname}/routes/api`);
+srv.use('/api', ApiRoutes); //Mount
 //=====================================================
 
 const SRV_PORT = process.env.SRV_PORT || 3030;
