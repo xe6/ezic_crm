@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from "../assets/mdb-react.png";
+import logo from "../assets/logo.png";
 import { MDBListGroup, MDBListGroupItem, MDBIcon } from 'mdbreact';
 import { NavLink } from 'react-router-dom';
 
@@ -26,12 +26,6 @@ const TopNavigation = () => {
                     <MDBListGroupItem>
                         <MDBIcon icon="table" className="mr-3"/>
                         Tables
-                    </MDBListGroupItem>
-                </NavLink>
-                <NavLink to="/maps" activeClassName="activeClass">
-                    <MDBListGroupItem>
-                        <MDBIcon icon="map" className="mr-3"/>
-                        Maps
                     </MDBListGroupItem>
                 </NavLink>
                 <NavLink to="/404" activeClassName="activeClass">
