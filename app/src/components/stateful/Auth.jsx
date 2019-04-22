@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { MDBBtn, MDBModal, MDBModalHeader, MDBModalBody } from "mdbreact";
 import RegisterForm from "../stateless/RegisterForm";
 import LoginForm from "../stateless/LoginForm";
+import { execRegisterRequest } from "../../redux/actions/auth";
 
 class Auth extends Component {
   constructor(props) {
@@ -54,7 +55,7 @@ class Auth extends Component {
             </MDBBtn>
           </MDBModalBody>
         </MDBModal>
-        
+
         <MDBModal
           toggle={this.toggle("Register")}
           isOpen={this.state.modalRegister}
@@ -79,12 +80,11 @@ class Auth extends Component {
 
   handleLogin(e) {
     e.preventDefault();
-    console.log("Login clicked");
   }
 
   handleRegister(e) {
     e.preventDefault();
-    console.log("Register clicked");
+    execRegisterRequest({});
   }
 }
 

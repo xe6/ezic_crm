@@ -46,14 +46,14 @@ const RegisterForm = (props) => {
                     icon="address-card"
                     group
                     type="text"
-                    name="firstname"
+                    name="firstName"
                   />
                   <MDBInput
                     label="Type your last name"
                     icon="address-card"
                     group
                     type="text"
-                    name="lastname"
+                    name="lastName"
                   />
                   <MDBInput
                     label="Type your email"
