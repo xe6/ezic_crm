@@ -15,9 +15,9 @@ module.exports = {
         type: Sequelize.STRING
       },
       position: {
-        type: Sequelize.ENUM("teacher", "cleaner", "sys_admin","hr","manager")
+        type: Sequelize.ENUM("teacher", "cleaner", "sys_admin", "hr", "manager")
       },
-      lastName: {
+      salary: {
         type: Sequelize.FLOAT(7,2)
       },
       createdAt: {

@@ -8,11 +8,14 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      course_name_id: {
-        type: Sequelize.INTEGER
+      course_name: {
+        type: Sequelize.STRING
       },
       status: {
         type: Sequelize.ENUM("started", "in_progress")
+      },
+      price_per_month: {
+        type: Sequelize.FLOAT(7,2)
       },
       quantity_students_planned: {
         type: Sequelize.INTEGER

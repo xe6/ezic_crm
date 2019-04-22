@@ -11,11 +11,15 @@ module.exports = {
       contact_name: {
         type: Sequelize.STRING
       },
+      phone_number: {
+        type: Sequelize.STRING
+      },
       email: {
         type: Sequelize.STRING
       },
       status: {
-        type: Sequelize.ENUM("potencial", "gone", "beneficial","active")
+        type: Sequelize.ENUM("potencial", "enrolled", "gone", "beneficial", "active"),
+        defaultValue: "enrolled"
       },
       createdAt: {
         allowNull: false,
@@ -28,6 +32,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Employees');
+    return queryInterface.dropTable('Clients');
   }
 };
