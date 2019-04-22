@@ -7,7 +7,7 @@ const AuthController = require("../controllers/api/Auth");
 // =============================================================================
 
 router.get('/', (req, res) => HomeController.index(req, res));
-router.get('/register', (req, res) => AuthController.register(req, res));
+router.post('/register', (req, res) => AuthController.register(req, res));
 
 // =============================================================================
 
