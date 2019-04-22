@@ -1,18 +1,10 @@
 import React, { Component } from "react";
 import { MDBBtn, MDBModal, MDBModalHeader, MDBModalBody } from "mdbreact";
-import RegisterForm from "../stateless/RegisterForm";
-import LoginForm from "../stateless/LoginForm";
-import { execRegisterRequest } from "../../redux/actions/auth";
+import RegisterForm from "./RegisterForm";
+import LoginForm from "./LoginForm";
 
 class Auth extends Component {
-  constructor(props) {
-    super(props);
-    //===============|Binding This to ev. handlers|===============
-    this.handleLogin = this.handleLogin.bind(this);
-    this.handleRegister = this.handleRegister.bind(this);
-    //============================================================
-  }
-
+  
   state = {
     modalLogin: false,
     modalRegister: false
@@ -48,7 +40,7 @@ class Auth extends Component {
             className="text-center"
             style={{ background: "#000", color: "#fff" }}
           >
-            <LoginForm submit={this.handleLogin} />
+            <LoginForm />
 
             <MDBBtn color="secondary" onClick={this.toggle("Login")}>
               Close
@@ -67,7 +59,7 @@ class Auth extends Component {
             className="text-center"
             style={{ background: "#000", color: "#fff" }}
           >
-            <RegisterForm submit={this.handleRegister} />
+            <RegisterForm />
 
             <MDBBtn color="secondary" onClick={this.toggle("Register")}>
               Close
@@ -78,14 +70,6 @@ class Auth extends Component {
     );
   }
 
-  handleLogin(e) {
-    e.preventDefault();
-  }
-
-  handleRegister(e) {
-    e.preventDefault();
-    execRegisterRequest({});
-  }
 }
 
 export default Auth;

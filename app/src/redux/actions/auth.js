@@ -4,7 +4,7 @@ import {
   REQUEST_REGISTER_FAILURE
 } from "./types";
 
-import jFetch from "../../utils/jFetch";
+import { jFetch } from "../../utils/jFetch";
 
 export const execRegisterRequest = (userData) => (dispatch) => {
   dispatch({
@@ -13,9 +13,14 @@ export const execRegisterRequest = (userData) => (dispatch) => {
 
   jFetch("/register", {
     method: "POST",
-    body: userData
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userData)
+    
   }).then((srvResponse) => {
-    if(srvResponse.success){
+    if (srvResponse.success) {
       dispatch({
         type: REQUEST_REGISTER_SUCCESS
       })
