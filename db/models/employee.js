@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       fio: DataTypes.STRING,
       contact_info: DataTypes.STRING,
-      lastName: DataTypes.ENUM("teacher", "cleaner", "sys_admin","hr","manager"),
+      lastName: DataTypes.ENUM("teacher", "cleaner", "sys_admin", "hr", "manager"),
       salary: DataTypes.FLOAT(7,2)
     },
     {
@@ -13,7 +13,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
   Employee.associate = function(models) {
-    // associations can be defined here
+    Employee.belongsTo(models.Deal, {
+      foreignKey: 'id',
+      targetKey: 'id_teacher'
+    });
+    Employee.belongsTo(models.Deal, {
+      foreignKey: 'id',
+      targetKey: 'id_employee_concluded'
+    });
   };
   return Employee;
 };
