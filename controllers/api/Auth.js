@@ -82,7 +82,9 @@ class Auth extends Controller {
         message: "Successfully logged in",
         data: {
           id: account.id,
-          login: account.login
+          login: account.login,
+          firstName: account.firstName,
+          lastName: account.lastName
         },
         token
       })

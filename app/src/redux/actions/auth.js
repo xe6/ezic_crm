@@ -65,5 +65,13 @@ export const execLoginRequest = (userData) => (dispatch) => {
         }
       });
     }
+  })
+  .catch((err) => {
+    dispatch({
+      type: REQUEST_LOGIN_FAILURE,
+      payload: {
+        message: err
+      }
+    })
   });
 }
