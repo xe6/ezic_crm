@@ -11,6 +11,8 @@ import {
   MDBBtn,
   MDBInput
 } from "mdbreact";
+import { connect } from "react-redux";
+import { execLoginRequest } from "../../redux/actions/auth";
 
 class LoginForm extends Component {
 
@@ -79,7 +81,22 @@ class LoginForm extends Component {
 
   handleLogin(e) {
     e.preventDefault();
+    const userData = {
+      login: this.loginRef.current.inputElementRef.current.value,
+      password: this.passwordRef.current.inputElementRef.current.value
+    }
+
+    this.props.execLoginRequest(userData);
   }
 }
 
-export default LoginForm;
+const mapStateToProps = (state) => ({
+  pending: state.auth.requestIsPending,
+  success: state.auth.requestSucceeded,
+  failure: state.auth.requestFailed
+});
+
+export default connect(
+  mapStateToProps,
+  { execLoginRequest }
+)(LoginForm);
