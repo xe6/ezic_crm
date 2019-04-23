@@ -4,7 +4,16 @@ export const jFetch = (url, params = {}) => {
 
 export const aFetch = (url, params = {}) => {
   let token = localStorage.getItem("jwtToken");
-  if(!token) throw new Error("Failed to locate token in LS");
+
+  //Silently abandon request when there is no token in LS
+  if(!token) {
+    return new Promise((resolve, reject) => {
+      resolve({
+        success: false,
+        data: null
+      })
+    });
+  }
 
   if(!params.headers) params.headers = {
     "Content-Type": "application/json",

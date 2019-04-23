@@ -7,7 +7,7 @@ import {
   REQUEST_LOGIN_FAILURE
 } from "./types";
 
-import { jFetch } from "../../utils";
+import { jFetch, aFetch } from "../../utils";
 
 export const execRegisterRequest = (userData) => (dispatch) => {
   dispatch({
@@ -81,4 +81,15 @@ export const execLoginRequest = (userData) => (dispatch) => {
         }
       })
     });
+}
+
+export const execWhoamiRequest = () => (dispatch) => {
+  aFetch("/whoami").then((srvResponse) => {
+    if(srvResponse.success){
+      dispatch({
+        type: REQUEST_LOGIN_SUCCESS,
+        payload: srvResponse.data
+      })
+    }
+  })
 }

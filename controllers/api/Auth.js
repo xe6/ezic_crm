@@ -69,7 +69,12 @@ class Auth extends Controller {
     let passIsValid = await bcrypt.compare(acceptedPassword, account.password);
 
     if (passIsValid) {
-      let token = jwt.sign({ login: acceptedLogin, id: account.id },
+      let token = jwt.sign({
+        login: acceptedLogin,
+        id: account.id,
+        firstName: account.firstName,
+        lastName: account.lastName
+      },
         process.env.JWT_SECRET,
         {
           expiresIn: '24h' // expires in 24 hours
@@ -93,6 +98,35 @@ class Auth extends Controller {
         success: false,
         message: "Invalid credentials"
       })
+    }
+  }
+
+  async whoami(req, res) {
+    let token = req.headers['x-access-token'] || req.headers['authorization']; // Express headers are auto converted to lowercase
+    if (token.startsWith('Bearer ')) {
+      // Remove Bearer from string
+      token = token.slice(7, token.length);
+    }
+
+    if (token) {
+      jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+        if (err) {
+          return res.json({
+            success: false,
+            message: 'Token is not valid'
+          });
+        } else {
+          return res.json({
+            success: true,
+            data: decoded
+          })
+        }
+      });
+    } else {
+      return res.json({
+        success: false,
+        message: 'Auth token is not supplied'
+      });
     }
   }
 }
