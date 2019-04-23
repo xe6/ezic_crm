@@ -21,7 +21,7 @@ export const execRegisterRequest = (userData) => (dispatch) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(userData)
-    
+
   }).then((srvResponse) => {
     if (srvResponse.success) {
       dispatch({
@@ -35,6 +35,13 @@ export const execRegisterRequest = (userData) => (dispatch) => {
         }
       });
     }
+  }).catch((err) => {
+    dispatch({
+      type: REQUEST_REGISTER_FAILURE,
+      payload: {
+        message: err.message
+      }
+    });
   });
 };
 
@@ -51,7 +58,7 @@ export const execLoginRequest = (userData) => (dispatch) => {
     },
     body: JSON.stringify(userData)
   }).then((srvResponse) => {
-    if(srvResponse.success) {
+    if (srvResponse.success) {
       localStorage.setItem("jwtToken", srvResponse.token);
       dispatch({
         type: REQUEST_LOGIN_SUCCESS,
@@ -66,12 +73,12 @@ export const execLoginRequest = (userData) => (dispatch) => {
       });
     }
   })
-  .catch((err) => {
-    dispatch({
-      type: REQUEST_LOGIN_FAILURE,
-      payload: {
-        message: err
-      }
-    })
-  });
+    .catch((err) => {
+      dispatch({
+        type: REQUEST_LOGIN_FAILURE,
+        payload: {
+          message: err.message
+        }
+      })
+    });
 }

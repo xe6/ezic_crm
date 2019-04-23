@@ -103,7 +103,7 @@ class LoginForm extends Component {
         <div style={{ color: "red" }}>
           <MDBIcon icon="times" />
           <hr />
-          Oops! {this.props.failureMessage}
+          <span>Oops! {this.props.failureMessage}</span>
         </div>
 
       )
