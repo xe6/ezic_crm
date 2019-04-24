@@ -7,12 +7,12 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       autoIncrement: true
     },
-      contact_name: DataTypes.STRING,
-      contact_number: DataTypes.STRING,
-      stage: DataTypes.ENUM("new", "contract_signed", "payment", "success"),
-      stage_date: DataTypes.DATE,
-      extra_info: DataTypes.TEXT
-    },
+    contact_name: DataTypes.STRING,
+    contact_number: DataTypes.STRING,
+    stage: DataTypes.ENUM("new", "contract_signed", "payment", "success"),
+    stage_date: DataTypes.DATE,
+    extra_info: DataTypes.TEXT
+  },
   {
     timestamps: true
   });
@@ -23,5 +23,6 @@ module.exports = (sequelize, DataTypes) => {
     Deal.belogsTo(models.Course);
     Deal.belongTo(models.User);
   };
+  
   return Deal;
 };
