@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   Teacher.associate = function(models) {
-    // Teacher.hasMany(models.Deal);
+    Teacher.hasMany(models.Deal);
     Teacher.belongsToMany(models.Course, {through: 'TeacherCourses'});
   };
 

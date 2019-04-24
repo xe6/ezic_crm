@@ -20,9 +20,9 @@ module.exports = (sequelize, DataTypes) => {
   Deal.associate = function(models) {
     Deal.belongsTo(models.Client);
     Deal.belongsTo(models.Teacher);
-    Deal.belogsTo(models.Course);
-    Deal.belongTo(models.User);
+    Deal.belongsTo(models.Course);
+    Deal.belongsTo(models.User);
   };
-  
+
   return Deal;
 };

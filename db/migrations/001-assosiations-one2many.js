@@ -61,7 +61,6 @@ module.exports = {
     },
 
     down: (queryInterface, Sequelize) => {
-        // TODO : wwite such a query that migration will accept
         return queryInterface.removeColumn(
             "Deals",
             "Course_Id"

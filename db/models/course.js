@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
   Course.associate = function(models) {
-    // Course.hasMany(models.Deal);
+    Course.hasMany(models.Deal);
     Course.belongsToMany(models.Teacher, {through: 'TeacherCourses'});
   };
   
