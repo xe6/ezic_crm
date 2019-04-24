@@ -11,10 +11,12 @@ import {
   MDBBtn,
   MDBInput
 } from "mdbreact";
+import { connect } from "react-redux";
+import { execLoginRequest } from "../../redux/actions/auth";
 
 class LoginForm extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.loginRef = React.createRef();
     this.passwordRef = React.createRef();
@@ -32,7 +34,7 @@ class LoginForm extends Component {
               <MDBCardBody style={{ background: "#111", color: "#fff" }}>
                 <MDBCardHeader className="form-header deep-blue-gradient rounded">
                   <h3 className="my-3">
-                    <MDBIcon icon="lock" /> Login:
+                    {this.checkAuthStatus()}
                   </h3>
                 </MDBCardHeader>
                 <form onSubmit={(e) => this.handleLogin(e)}>
@@ -63,7 +65,7 @@ class LoginForm extends Component {
                       type="submit"
                     >
                       Login
-                  </MDBBtn>
+                    </MDBBtn>
                   </div>
                 </form>
                 <MDBModalFooter>
@@ -77,9 +79,59 @@ class LoginForm extends Component {
     );
   }
 
+  checkAuthStatus() {
+    if (this.props.pending) {
+      return (
+        <div className="spinner-border text-primary" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>
+      )
+    }
+
+    if (this.props.success) {
+      return (
+        <div style={{ color: "#00c851" }}>
+          <MDBIcon icon="check" />
+          <hr />
+          Welcome, {this.props.userData.firstName}!
+        </div>
+      )
+    }
+
+    if (this.props.failure) {
+      return (
+        <div style={{ color: "red" }}>
+          <MDBIcon icon="times" />
+          <hr />
+          <span>Oops! {this.props.failureMessage}</span>
+        </div>
+
+      )
+    }
+
+    return <MDBIcon icon="lock" />
+  }
+
   handleLogin(e) {
     e.preventDefault();
+    const userData = {
+      login: this.loginRef.current.inputElementRef.current.value,
+      password: this.passwordRef.current.inputElementRef.current.value
+    }
+
+    this.props.execLoginRequest(userData);
   }
 }
 
-export default LoginForm;
+const mapStateToProps = (state) => ({
+  pending: state.auth.requestIsPending,
+  success: state.auth.requestSucceeded,
+  failure: state.auth.requestFailed,
+  failureMessage: state.auth.failureMessage,
+  userData: state.auth.userData
+});
+
+export default connect(
+  mapStateToProps,
+  { execLoginRequest }
+)(LoginForm);
