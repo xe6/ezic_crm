@@ -32,6 +32,7 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Clients');
+    return queryInterface.sequelize.query('SET FOREIGN_KEY_CHECKS = 0', {raw: true})
+      .then(queryInterface.dropTable("Clients"));
   }
 };

@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Employees', {
+    return queryInterface.createTable('Teachers', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -13,9 +13,6 @@ module.exports = {
       },
       contact_info: {
         type: Sequelize.STRING
-      },
-      position: {
-        type: Sequelize.ENUM("teacher", "cleaner", "sys_admin", "hr", "manager")
       },
       salary: {
         type: Sequelize.FLOAT(7,2)
@@ -31,6 +28,7 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Employees');
+    return queryInterface.sequelize.query('SET FOREIGN_KEY_CHECKS = 0', {raw: true})
+      .then(queryInterface.dropTable("Teachers"));
   }
 };
