@@ -40,14 +40,13 @@ class Auth extends Component {
             className="text-center"
             style={{ background: "#000", color: "#fff" }}
           >
-            <LoginForm />
 
+            <LoginForm />
             <MDBBtn color="secondary" onClick={this.toggle("Login")}>
               Close
             </MDBBtn>
           </MDBModalBody>
         </MDBModal>
-
         <MDBModal
           toggle={this.toggle("Register")}
           isOpen={this.state.modalRegister}
@@ -61,6 +60,7 @@ class Auth extends Component {
           >
             <RegisterForm />
 
+
             <MDBBtn color="secondary" onClick={this.toggle("Register")}>
               Close
             </MDBBtn>
@@ -69,7 +69,6 @@ class Auth extends Component {
       </React.Fragment>
     );
   }
-
 }
 
 export default Auth;

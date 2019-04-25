@@ -13,6 +13,7 @@ import { Provider } from "react-redux";
 //Enable state logging for debugging purposes
 if(process.env.NODE_ENV === "development") {
     store.subscribe(() => console.log(store.getState()));
+
 }
 
 ReactDOM.render(<Provider store={store}><Router><App /></Router></Provider>, document.getElementById('root'));
