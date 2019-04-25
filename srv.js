@@ -5,7 +5,7 @@ const srv = express();
 
 //================|Configuring Express|================
 srv.set('trust proxy', 1) // Trust first proxy (for NGINX in prod)
-srv.use(bodyParser.urlencoded({ extended: true }));
+srv.use(bodyParser.json());
 //=====================================================
 
 //==================|Mounting Routes|==================

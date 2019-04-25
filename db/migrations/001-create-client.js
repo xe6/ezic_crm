@@ -1,27 +1,25 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Users', {
+    return queryInterface.createTable('Clients', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      login: {
+      contact_name: {
         type: Sequelize.STRING
       },
-      password: {
-        type: Sequelize.STRING
-      },
-      firstName: {
-        type: Sequelize.STRING
-      },
-      lastName: {
+      phone_number: {
         type: Sequelize.STRING
       },
       email: {
         type: Sequelize.STRING
+      },
+      status: {
+        type: Sequelize.ENUM("potencial", "enrolled", "gone", "beneficial", "active"),
+        defaultValue: "enrolled"
       },
       createdAt: {
         allowNull: false,
@@ -35,6 +33,6 @@ module.exports = {
   },
   down: (queryInterface, Sequelize) => {
     return queryInterface.sequelize.query('SET FOREIGN_KEY_CHECKS = 0', {raw: true})
-      .then(queryInterface.dropTable("Users"));
+      .then(queryInterface.dropTable("Clients"));
   }
 };
