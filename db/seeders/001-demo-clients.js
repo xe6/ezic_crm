@@ -6,7 +6,7 @@ module.exports = {
       contact_name: "Merle Patrick",
       phone_number: "+1-202-555-0168",
       email: "merle.patrick@demo.com",
-      status: "potencial",
+      status: "active",
       createdAt: "2019-04-29 12:38:31",
       updatedAt: "2019-04-29 12:38:31"
     }, {
@@ -20,7 +20,7 @@ module.exports = {
       contact_name: "Wilbur	Salazar",
       phone_number: "+1-202-555-0155",
       email: "wilbur.salazar@demo.com",
-      status: "gone",
+      status: "active",
       createdAt: "2019-01-03 10:13:23",
       updatedAt: "2019-01-03 10:13:23"
     }, {

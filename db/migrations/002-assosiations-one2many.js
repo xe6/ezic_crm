@@ -1,8 +1,10 @@
+'use strict';
+
 module.exports = {
     up: (queryInterface, Sequelize) => {
         return queryInterface.addColumn(
             "Deals",
-            'Course_id', //foreign key should in single quotes and in upper case  
+            'Course_id', //foreign key should in single quotes and in upper case
             {
                 type: Sequelize.INTEGER,
                 references: {
