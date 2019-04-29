@@ -23,7 +23,7 @@ module.exports = {
       quantity_students_initial: {
         type: Sequelize.INTEGER
       },
-      qunatity_students_now: {
+      quantity_students_now: {
         type: Sequelize.INTEGER
       },
       createdAt: {
