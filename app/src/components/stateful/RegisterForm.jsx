@@ -50,6 +50,7 @@ class RegisterForm extends Component {
                       type="text"
                       name="login"
                       ref={this.loginRef}
+                      required
                     />
                     <MDBInput
                       label="Type your password"
@@ -59,6 +60,7 @@ class RegisterForm extends Component {
                       validate
                       name="password"
                       ref={this.passwordRef}
+                      required
                     />
                     <MDBInput
                       label="Type your first name"
@@ -86,6 +88,7 @@ class RegisterForm extends Component {
                       success="right"
                       name="email"
                       ref={this.emailRef}
+                      required
                     />
                   </div>
 

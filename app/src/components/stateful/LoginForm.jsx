@@ -46,6 +46,7 @@ class LoginForm extends Component {
                       type="text"
                       name="login"
                       ref={this.loginRef}
+                      required
                     />
                     <MDBInput
                       label="Type your password"
@@ -55,6 +56,7 @@ class LoginForm extends Component {
                       validate
                       name="password"
                       ref={this.passwordRef}
+                      required
                     />
                   </div>
 
