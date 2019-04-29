@@ -38,7 +38,7 @@ class RegisterForm extends Component {
               <MDBCardBody style={{ background: "#111", color: "#fff" }}>
                 <MDBCardHeader className="form-header deep-blue-gradient rounded">
                   <h3 className="my-3">
-                    <MDBIcon icon="lock" /> Register:
+                    {this.checkRegisterStatus()}
                   </h3>
                 </MDBCardHeader>
                 <form onSubmit={(e) => this.handleRegister(e)}>
@@ -108,6 +108,39 @@ class RegisterForm extends Component {
         </MDBRow>
       </MDBContainer>
     );
+  }
+
+  checkRegisterStatus() {
+    if (this.props.pending) {
+      return (
+        <div className="spinner-border text-primary" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>
+      )
+    }
+
+    if (this.props.success) {
+      return (
+        <div style={{ color: "#00c851" }}>
+          <MDBIcon icon="check" />
+          <hr />
+          Account was created successfully
+        </div>
+      )
+    }
+
+    if (this.props.failure) {
+      return (
+        <div style={{ color: "red" }}>
+          <MDBIcon icon="times" />
+          <hr />
+          <span>Oops! Error occurred</span>
+        </div>
+
+      )
+    }
+
+    return <MDBIcon icon="lock" />
   }
 
   handleRegister(e) {

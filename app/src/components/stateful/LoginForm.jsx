@@ -93,7 +93,7 @@ class LoginForm extends Component {
         <div style={{ color: "#00c851" }}>
           <MDBIcon icon="check" />
           <hr />
-          Welcome, {this.props.userData.firstName}!
+          {this.props.userData ? `Welcome,${this.props.userData.firstName}!` : "Please login"} 
         </div>
       )
     }
