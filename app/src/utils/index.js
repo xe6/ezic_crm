@@ -10,7 +10,8 @@ export const aFetch = (url, params = {}) => {
     return new Promise((resolve, reject) => {
       resolve({
         success: false,
-        data: null
+        data: null,
+        error: "Auth token is not supplied"
       })
     });
   }

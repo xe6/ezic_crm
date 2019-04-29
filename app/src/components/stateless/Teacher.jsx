@@ -1,6 +1,5 @@
 import React from "react";
-import { MDBRow, MDBCol, MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText } from "mdbreact";
-import { ASSETS_PATH } from "../../constants";
+import { MDBRow, MDBCol, MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn } from "mdbreact";
 
 const Teacher = ({ _id, _fio, _contacts, _salary }) => {
     return (
@@ -8,7 +7,7 @@ const Teacher = ({ _id, _fio, _contacts, _salary }) => {
             <MDBRow className="justify-content-center">
                 <MDBCol sm="12" md="6" lg="3" className="mb-5">
                     <MDBCard>
-                        <MDBCardImage className="img-fluid" src={`${ASSETS_PATH}/teachers/${_id}`} />
+                        <MDBCardImage className="img-fluid" src={`assets/teachers/${_id}.png`} />
                         <MDBCardBody>
                             <MDBCardTitle className="text-center mb-2 font-bold">{_fio}</MDBCardTitle>
                             <MDBCardTitle sub className="text-center indigo-text mb-2 font-bold">{_salary}</MDBCardTitle>

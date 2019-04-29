@@ -6,13 +6,24 @@ class Teachers extends Controller {
         try {
             teachers = await this.DB.Teacher.findAll();
         } catch (err) {
-            return res.status(500).json({ error: err.message });
+            return res.status(500).json({ 
+                success: false,
+                error: err.message,
+                data: null
+            });
         }
 
         if (teachers) {
-            return res.json(teachers);
+            return res.json({
+                success: true,
+                data: teachers
+            });
         }
-        return res.status(404).json({ error: "No Data available" });
+        return res.status(404).json({ 
+            success: false,
+            error: "No Data available",
+            data: null
+        });
     }
 }
 
