@@ -14,7 +14,7 @@ export const execRegisterRequest = (userData) => (dispatch) => {
     type: REQUEST_REGISTER_PENDING
   });
 
-  jFetch("/register", {
+  jFetch("/api/register", {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -50,7 +50,7 @@ export const execLoginRequest = (userData) => (dispatch) => {
     type: REQUEST_LOGIN_PENDING
   });
 
-  jFetch("/login", {
+  jFetch("/api/login", {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -84,7 +84,7 @@ export const execLoginRequest = (userData) => (dispatch) => {
 }
 
 export const execWhoamiRequest = () => (dispatch) => {
-  aFetch("/whoami").then((srvResponse) => {
+  aFetch("/api/whoami").then((srvResponse) => {
     if(srvResponse.success){
       dispatch({
         type: REQUEST_LOGIN_SUCCESS,
