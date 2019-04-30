@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { aFetch } from "../../utils";
 import Teacher from "../stateless/Teacher";
+import { MDBRow } from "mdbreact";
 
 class AllTeachers extends Component {
     state = {
@@ -28,20 +29,25 @@ class AllTeachers extends Component {
 
     render() {
         return (
+            <React.Fragment>
+                <MDBRow className="justify-content-center">
+                    {this.state.hasData
+                        ?
+                        this.state.teachers.map((teacher) => {
+                            return <Teacher
+                                key={teacher.id}
+                                _id={teacher.id}
+                                _fio={teacher.fio}
+                                _salary={teacher.salary}
+                                _contacts={teacher.contact_info}
+                            />
+                        })
+                        :
+                        <h1>{this.state.errorMsg}</h1>}
+                </MDBRow>
+            </React.Fragment>
 
-            this.state.hasData
-                ?
-                this.state.teachers.map((teacher) => {
-                    return <Teacher
-                        key={teacher.id}
-                        _id={teacher.id}
-                        _fio={teacher.fio}
-                        _salary={teacher.salary}
-                        _contacts={teacher.contact_info}
-                    />
-                })
-                :
-                <h1>{this.state.errorMsg}</h1>
+
         )
     }
 }

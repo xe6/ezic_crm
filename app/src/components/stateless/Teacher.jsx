@@ -1,10 +1,9 @@
 import React from "react";
-import { MDBRow, MDBCol, MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn } from "mdbreact";
+import { MDBCol, MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn } from "mdbreact";
 
 const Teacher = ({ _id, _fio, _contacts, _salary }) => {
     return (
         <React.Fragment>
-            <MDBRow className="justify-content-center">
                 <MDBCol sm="12" md="6" lg="3" className="mb-5">
                     <MDBCard>
                         <MDBCardImage className="img-fluid" src={`assets/teachers/${_id}.png`} />
@@ -20,7 +19,6 @@ const Teacher = ({ _id, _fio, _contacts, _salary }) => {
                         </MDBCardBody>
                     </MDBCard>
                 </MDBCol>
-            </MDBRow>
         </React.Fragment>
     )
 }
