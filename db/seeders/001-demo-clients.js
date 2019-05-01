@@ -29,6 +29,104 @@ module.exports = {
       contact_name: faker.name.findName(),
       phone_number: faker.phone.phoneNumberFormat(),
       email: faker.internet.email(),
+      status: "active",
+      createdAt: "2019-01-03 10:13:23",
+      updatedAt: "2019-01-03 10:13:23"
+    }, {
+      contact_name: faker.name.findName(),
+      phone_number: faker.phone.phoneNumberFormat(),
+      email: faker.internet.email(),
+      status: "active",
+      createdAt: "2019-01-03 10:13:23",
+      updatedAt: "2019-01-03 10:13:23"
+    }, {
+      contact_name: faker.name.findName(),
+      phone_number: faker.phone.phoneNumberFormat(),
+      email: faker.internet.email(),
+      status: "active",
+      createdAt: "2019-01-03 10:13:23",
+      updatedAt: "2019-01-03 10:13:23"
+    }, {
+      contact_name: faker.name.findName(),
+      phone_number: faker.phone.phoneNumberFormat(),
+      email: faker.internet.email(),
+      status: "active",
+      createdAt: "2019-01-03 10:13:23",
+      updatedAt: "2019-01-03 10:13:23"
+    }, {
+      contact_name: faker.name.findName(),
+      phone_number: faker.phone.phoneNumberFormat(),
+      email: faker.internet.email(),
+      status: "active",
+      createdAt: "2019-01-03 10:13:23",
+      updatedAt: "2019-01-03 10:13:23"
+    }, {
+      contact_name: faker.name.findName(),
+      phone_number: faker.phone.phoneNumberFormat(),
+      email: faker.internet.email(),
+      status: "active",
+      createdAt: "2019-01-03 10:13:23",
+      updatedAt: "2019-01-03 10:13:23"
+    }, {
+      contact_name: faker.name.findName(),
+      phone_number: faker.phone.phoneNumberFormat(),
+      email: faker.internet.email(),
+      status: "active",
+      createdAt: "2019-01-03 10:13:23",
+      updatedAt: "2019-01-03 10:13:23"
+    }, {
+      contact_name: faker.name.findName(),
+      phone_number: faker.phone.phoneNumberFormat(),
+      email: faker.internet.email(),
+      status: "enrolled",
+      createdAt: "2019-01-03 10:13:23",
+      updatedAt: "2019-01-03 10:13:23"
+    }, {
+      contact_name: faker.name.findName(),
+      phone_number: faker.phone.phoneNumberFormat(),
+      email: faker.internet.email(),
+      status: "enrolled",
+      createdAt: "2019-01-03 10:13:23",
+      updatedAt: "2019-01-03 10:13:23"
+    }, {
+      contact_name: faker.name.findName(),
+      phone_number: faker.phone.phoneNumberFormat(),
+      email: faker.internet.email(),
+      status: "enrolled",
+      createdAt: "2019-01-03 10:13:23",
+      updatedAt: "2019-01-03 10:13:23"
+    }, {
+      contact_name: faker.name.findName(),
+      phone_number: faker.phone.phoneNumberFormat(),
+      email: faker.internet.email(),
+      status: "enrolled",
+      createdAt: "2019-01-03 10:13:23",
+      updatedAt: "2019-01-03 10:13:23"
+    }, {
+      contact_name: faker.name.findName(),
+      phone_number: faker.phone.phoneNumberFormat(),
+      email: faker.internet.email(),
+      status: "enrolled",
+      createdAt: "2019-01-03 10:13:23",
+      updatedAt: "2019-01-03 10:13:23"
+    }, {
+      contact_name: faker.name.findName(),
+      phone_number: faker.phone.phoneNumberFormat(),
+      email: faker.internet.email(),
+      status: "enrolled",
+      createdAt: "2019-01-03 10:13:23",
+      updatedAt: "2019-01-03 10:13:23"
+    }, {
+      contact_name: faker.name.findName(),
+      phone_number: faker.phone.phoneNumberFormat(),
+      email: faker.internet.email(),
+      status: "enrolled",
+      createdAt: "2019-01-03 10:13:23",
+      updatedAt: "2019-01-03 10:13:23"
+    }, {
+      contact_name: faker.name.findName(),
+      phone_number: faker.phone.phoneNumberFormat(),
+      email: faker.internet.email(),
       status: "beneficial",
       createdAt: "2018-06-07 11:20:17",
       updatedAt: "2018-06-07 11:20:17"

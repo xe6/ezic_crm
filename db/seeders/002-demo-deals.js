@@ -13,7 +13,7 @@ module.exports = {
       updatedAt: "2019-04-25 15:00:00",
       Course_id: 1,
       Teacher_id: 1,
-      Client_id: 9,
+      Client_id: 16,
       Employee_concluded_id: 1
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
@@ -24,7 +24,7 @@ module.exports = {
       updatedAt: "2019-04-28 16:00:00",
       Course_id: 4,
       Teacher_id: 2,
-      Client_id: 4,
+      Client_id: 15,
       Employee_concluded_id: 2
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
@@ -35,7 +35,7 @@ module.exports = {
       updatedAt: "2019-04-13 12:00:00",
       Course_id: 2,
       Teacher_id: 3,
-      Client_id: 5,
+      Client_id: 14,
       Employee_concluded_id: 2
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
@@ -46,7 +46,7 @@ module.exports = {
       updatedAt: "2019-04-11 13:00:00",
       Course_id: 3,
       Teacher_id: 3,
-      Client_id: 10,
+      Client_id: 13,
       Employee_concluded_id: 3
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
@@ -57,7 +57,7 @@ module.exports = {
       updatedAt: "2019-05-02 19:00:00",
       Course_id: 5,
       Teacher_id: 4,
-      Client_id: 5,
+      Client_id: 12,
       Employee_concluded_id: 3
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
@@ -68,19 +68,63 @@ module.exports = {
       updatedAt: "2019-05-02 19:00:00",
       Course_id: 5,
       Teacher_id: 4,
-      Client_id: 3,
+      Client_id: 11,
       Employee_concluded_id: 3
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
       stage: "success",
-      stage_date: "2019-04-16 15:00:00",
+      stage_date: "2018-12-16 15:00:00",
       extra_info: faker.lorem.sentences(),
-      createdAt: "2019-04-16 15:00:00",
-      updatedAt: "2019-04-16 15:00:00",
+      createdAt: "2018-12-16 15:00:00",
+      updatedAt: "2018-12-16 15:00:00",
       Course_id: 3,
-      Teacher_id: 3,
-      Client_id: 7,
+      Teacher_id: 1,
+      Client_id: 10,
       Employee_concluded_id: 1
+    }, {
+      contact_number: faker.phone.phoneNumberFormat(),
+      stage: "success",
+      stage_date: "2019-01-18 12:00:00",
+      extra_info: faker.lorem.paragraph(),
+      createdAt: "2019-01-18 12:00:00",
+      updatedAt: "2019-01-18 12:00:00",
+      Course_id: 1,
+      Teacher_id: 3,
+      Client_id: 9,
+      Employee_concluded_id: 2
+    }, {
+      contact_number: faker.phone.phoneNumberFormat(),
+      stage: "success",
+      stage_date: "2019-02-18 12:00:00",
+      extra_info: faker.lorem.paragraph(),
+      createdAt: "2019-02-18 12:00:00",
+      updatedAt: "2019-02-18 12:00:00",
+      Course_id: 2,
+      Teacher_id: 1,
+      Client_id: 8,
+      Employee_concluded_id: 1
+    }, {
+      contact_number: faker.phone.phoneNumberFormat(),
+      stage: "success",
+      stage_date: "2019-04-18 12:00:00",
+      extra_info: faker.lorem.paragraph(),
+      createdAt: "2019-03-18 12:00:00",
+      updatedAt: "2019-03-18 12:00:00",
+      Course_id: 5,
+      Teacher_id: 1,
+      Client_id: 7,
+      Employee_concluded_id: 3
+    }, {
+      contact_number: faker.phone.phoneNumberFormat(),
+      stage: "success",
+      stage_date: "2019-03-18 12:00:00",
+      extra_info: faker.lorem.paragraph(),
+      createdAt: "2019-03-18 12:00:00",
+      updatedAt: "2019-03-18 12:00:00",
+      Course_id: 3,
+      Teacher_id: 4,
+      Client_id: 6,
+      Employee_concluded_id: 2
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
       stage: "success",
@@ -88,11 +132,143 @@ module.exports = {
       extra_info: faker.lorem.paragraph(),
       createdAt: "2019-04-18 12:00:00",
       updatedAt: "2019-04-18 12:00:00",
-      Course_id: 5,
-      Teacher_id: 2,
-      Client_id: 2,
-      Employee_concluded_id: 2
-    }], {});
+      Course_id: 3,
+      Teacher_id: 3,
+      Client_id: 5,
+      Employee_concluded_id: 1
+    }, {
+      contact_number: faker.phone.phoneNumberFormat(),
+      stage: "success",
+      stage_date: "2019-05-18 12:00:00",
+      extra_info: faker.lorem.paragraph(),
+      createdAt: "2019-05-18 12:00:00",
+      updatedAt: "2019-05-18 12:00:00",
+      Course_id: 2,
+      Teacher_id: 3,
+      Client_id: 4,
+      Employee_concluded_id: 3
+    }, {
+      contact_number: faker.phone.phoneNumberFormat(),
+      stage: "success",
+      stage_date: "2019-05-18 12:00:00",
+      extra_info: faker.lorem.paragraph(),
+      createdAt: "2019-05-18 12:00:00",
+      updatedAt: "2019-05-18 12:00:00",
+      Course_id: 4,
+      Teacher_id: 3,
+      Client_id: 3,
+      Employee_concluded_id: 3
+    }, {
+      contact_number: faker.phone.phoneNumberFormat(),
+      stage: "new",
+      stage_date: "2018-12-18 12:00:00",
+      extra_info: faker.lorem.paragraph(),
+      createdAt: "2018-12-18 12:00:00",
+      updatedAt: "2018-12-18 12:00:00",
+      Course_id: 4,
+      Teacher_id: 3,
+      Client_id: 3,
+      Employee_concluded_id: 3
+    }, {
+      contact_number: faker.phone.phoneNumberFormat(),
+      stage: "new",
+      stage_date: "2019-01-18 12:00:00",
+      extra_info: faker.lorem.paragraph(),
+      createdAt: "2018-01-18 12:00:00",
+      updatedAt: "2018-01-18 12:00:00",
+      Course_id: 4,
+      Teacher_id: 3,
+      Client_id: 3,
+      Employee_concluded_id: 3
+    }, {
+      contact_number: faker.phone.phoneNumberFormat(),
+      stage: "new",
+      stage_date: "2019-01-18 12:00:00",
+      extra_info: faker.lorem.paragraph(),
+      createdAt: "2019-01-18 12:00:00",
+      updatedAt: "2019-01-18 12:00:00",
+      Course_id: 4,
+      Teacher_id: 3,
+      Client_id: 3,
+      Employee_concluded_id: 3
+    }, {
+      contact_number: faker.phone.phoneNumberFormat(),
+      stage: "new",
+      stage_date: "2019-02-18 12:00:00",
+      extra_info: faker.lorem.paragraph(),
+      createdAt: "2019-02-18 12:00:00",
+      updatedAt: "2019-02-18 12:00:00",
+      Course_id: 4,
+      Teacher_id: 3,
+      Client_id: 3,
+      Employee_concluded_id: 3
+    }, {
+      contact_number: faker.phone.phoneNumberFormat(),
+      stage: "new",
+      stage_date: "2019-03-18 12:00:00",
+      extra_info: faker.lorem.paragraph(),
+      createdAt: "2019-03-18 12:00:00",
+      updatedAt: "2019-03-18 12:00:00",
+      Course_id: 4,
+      Teacher_id: 3,
+      Client_id: 3,
+      Employee_concluded_id: 3
+    }, {
+      contact_number: faker.phone.phoneNumberFormat(),
+      stage: "new",
+      stage_date: "2019-03-18 12:00:00",
+      extra_info: faker.lorem.paragraph(),
+      createdAt: "2019-03-18 12:00:00",
+      updatedAt: "2019-03-18 12:00:00",
+      Course_id: 4,
+      Teacher_id: 3,
+      Client_id: 3,
+      Employee_concluded_id: 3
+    }, {
+      contact_number: faker.phone.phoneNumberFormat(),
+      stage: "new",
+      stage_date: "2019-04-18 12:00:00",
+      extra_info: faker.lorem.paragraph(),
+      createdAt: "2019-04-18 12:00:00",
+      updatedAt: "2019-04-18 12:00:00",
+      Course_id: 4,
+      Teacher_id: 3,
+      Client_id: 3,
+      Employee_concluded_id: 3
+    }, {
+      contact_number: faker.phone.phoneNumberFormat(),
+      stage: "new",
+      stage_date: "2019-04-18 12:00:00",
+      extra_info: faker.lorem.paragraph(),
+      createdAt: "2019-04-18 12:00:00",
+      updatedAt: "2019-04-18 12:00:00",
+      Course_id: 4,
+      Teacher_id: 3,
+      Client_id: 3,
+      Employee_concluded_id: 3
+    }, {
+      contact_number: faker.phone.phoneNumberFormat(),
+      stage: "new",
+      stage_date: "2019-04-18 12:00:00",
+      extra_info: faker.lorem.paragraph(),
+      createdAt: "2019-04-18 12:00:00",
+      updatedAt: "2019-04-18 12:00:00",
+      Course_id: 4,
+      Teacher_id: 3,
+      Client_id: 3,
+      Employee_concluded_id: 3
+    }, {
+      contact_number: faker.phone.phoneNumberFormat(),
+      stage: "new",
+      stage_date: "2019-05-18 12:00:00",
+      extra_info: faker.lorem.paragraph(),
+      createdAt: "2019-05-18 12:00:00",
+      updatedAt: "2019-05-18 12:00:00",
+      Course_id: 4,
+      Teacher_id: 3,
+      Client_id: 3,
+      Employee_concluded_id: 3
+    }, ], {});
   },
 
   down: (queryInterface, Sequelize) => {
