@@ -1,6 +1,6 @@
 export const dealsStatistics = `
     delimiter //
-    create or replace view 'dealsStatistics' as
+    create or replace view 'deals_statistics' as
         select ifnull(stage, 'new') as stage, ifnull(q, 0) as deals_quantity, month from (
         select stage, count(*) as q,
         MONTHNAME(STR_TO_DATE(EXTRACT(MONTH from deals.createdAt) , '%m')) as month_name

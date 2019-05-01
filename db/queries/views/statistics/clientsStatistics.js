@@ -1,6 +1,6 @@
 export const clientsStatiscs = `
     delimiter //
-    create or replace view 'ClientsStatistics' as
+    create or replace view 'clients_statistics' as
         select ifnull(t.q, 0) as clients_quantity, ifnull(t.status, 'active') as status, month
         from (select count(*) as q, status,
         MONTHNAME(STR_TO_DATE(EXTRACT(MONTH from clients.createdAt) , '%m')) as month_name
