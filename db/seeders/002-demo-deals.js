@@ -1,12 +1,14 @@
 'use strict';
 
+var faker = require('faker');
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert("Deals", [{
-      contact_number: "+38 067 212 8899",
+      contact_number: faker.phone.phoneNumberFormat(),
       stage: "new",
       stage_date: "2019-04-25 15:00:00",
-      extra_info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      extra_info: faker.lorem.sentence(),
       createdAt: "2019-04-25 15:00:00",
       updatedAt: "2019-04-25 15:00:00",
       Course_id: 1,
@@ -14,10 +16,10 @@ module.exports = {
       Client_id: 9,
       Employee_concluded_id: 1
     }, {
-      contact_number: "+38 067 123 8765",
+      contact_number: faker.phone.phoneNumberFormat(),
       stage: "new",
       stage_date: "2019-04-28 15:00:00",
-      extra_info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      extra_info: faker.lorem.words(),
       createdAt: "2019-04-28 16:00:00",
       updatedAt: "2019-04-28 16:00:00",
       Course_id: 4,
@@ -25,10 +27,10 @@ module.exports = {
       Client_id: 4,
       Employee_concluded_id: 2
     }, {
-      contact_number: "+38 067 555 8125",
+      contact_number: faker.phone.phoneNumberFormat(),
       stage: "contract_signed",
       stage_date: "2019-04-13 12:00:00",
-      extra_info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      extra_info: faker.lorem.sentences(),
       createdAt: "2019-04-13 12:00:00",
       updatedAt: "2019-04-13 12:00:00",
       Course_id: 2,
@@ -36,10 +38,10 @@ module.exports = {
       Client_id: 5,
       Employee_concluded_id: 2
     }, {
-      contact_number: "+38 067 222 7654",
+      contact_number: faker.phone.phoneNumberFormat(),
       stage: "contract_signed",
       stage_date: "2019-04-11 13:00:00",
-      extra_info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      extra_info: faker.lorem.paragraph(),
       createdAt: "2019-04-11 13:00:00",
       updatedAt: "2019-04-11 13:00:00",
       Course_id: 3,
@@ -47,10 +49,10 @@ module.exports = {
       Client_id: 10,
       Employee_concluded_id: 3
     }, {
-      contact_number: "+38 067 321 9183",
+      contact_number: faker.phone.phoneNumberFormat(),
       stage: "payment",
       stage_date: "2019-05-02 19:00:00",
-      extra_info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      extra_info: faker.lorem.paragraph(),
       createdAt: "2019-05-02 19:00:00",
       updatedAt: "2019-05-02 19:00:00",
       Course_id: 5,
@@ -58,10 +60,10 @@ module.exports = {
       Client_id: 5,
       Employee_concluded_id: 3
     }, {
-      contact_number: "+38 067 222 7654",
+      contact_number: faker.phone.phoneNumberFormat(),
       stage: "payment",
       stage_date: "2019-05-02 19:00:00",
-      extra_info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      extra_info: faker.lorem.sentences(),
       createdAt: "2019-05-02 19:00:00",
       updatedAt: "2019-05-02 19:00:00",
       Course_id: 5,
@@ -69,10 +71,10 @@ module.exports = {
       Client_id: 3,
       Employee_concluded_id: 3
     }, {
-      contact_number: "+38 067 777 1234",
+      contact_number: faker.phone.phoneNumberFormat(),
       stage: "success",
       stage_date: "2019-04-16 15:00:00",
-      extra_info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      extra_info: faker.lorem.sentences(),
       createdAt: "2019-04-16 15:00:00",
       updatedAt: "2019-04-16 15:00:00",
       Course_id: 3,
@@ -80,10 +82,10 @@ module.exports = {
       Client_id: 7,
       Employee_concluded_id: 1
     }, {
-      contact_number: "+38 067 666 1123",
+      contact_number: faker.phone.phoneNumberFormat(),
       stage: "success",
       stage_date: "2019-04-18 12:00:00",
-      extra_info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      extra_info: faker.lorem.paragraph(),
       createdAt: "2019-04-18 12:00:00",
       updatedAt: "2019-04-18 12:00:00",
       Course_id: 5,

@@ -32,10 +32,46 @@ module.exports = {
             onDelete: "CASCADE"
           }
         }
-      );
+      )
+      .then(() => {
+        return queryInterface.createTable(
+          'ClientReasons',
+          {
+            createdAt: {
+              allowNull: false,
+              type: Sequelize.DATE,
+            },
+            updatedAt: {
+              allowNull: false,
+              type: Sequelize.DATE,
+            },
+            Client_id: {
+              type: Sequelize.INTEGER,
+              references: {
+                  model: "Clients",
+                  key: "id"
+              },
+              onUpdate: "CASCADE",
+              onDelete: "CASCADE"
+          },
+            Reason_id: {
+              type: Sequelize.INTEGER,
+              references: {
+                  model: "LeavingReasons",
+                  key: "id"
+              },
+              onUpdate: "CASCADE",
+              onDelete: "CASCADE"
+            }
+          }
+        )
+      });
     },
   
     down: (queryInterface, Sequelize) => {
-      return queryInterface.dropTable('TeacherCourses');
+      return queryInterface.dropTable('TeacherCourses')
+        .then(() => {
+          return queryInterface.dropTable('ClientReasons')
+        })
     },
   };
