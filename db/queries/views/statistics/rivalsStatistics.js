@@ -1,3 +1,4 @@
+// Average sum of rival's course prices
 export const rivalsStatistics = `
     delimiter //
     create or replace view 'average_rivals_prices' as

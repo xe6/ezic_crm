@@ -1,3 +1,4 @@
+// Quantity of success and new deals of the company for the last 6 months
 export const dealsStatistics = `
     delimiter //
     create or replace view 'deals_statistics' as

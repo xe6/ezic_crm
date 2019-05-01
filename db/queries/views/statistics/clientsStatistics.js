@@ -1,3 +1,4 @@
+// Quantity of clients who enrolled, has gone or now studying for the last 6 month
 export const clientsStatiscs = `
     delimiter //
     create or replace view 'clients_statistics' as

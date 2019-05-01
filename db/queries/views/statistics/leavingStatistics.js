@@ -1,3 +1,4 @@
+// Quantity of clients who leaves the courses by different reasons
 export const leavingStatistics = `
     delimiter //
     create or replace view 'leaving_statistics' as
