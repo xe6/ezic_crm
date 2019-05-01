@@ -6,6 +6,7 @@ import TablesPage from './pages/TablesPage';
 import NotFoundPage from './pages/NotFoundPage';
 import IntroPage from "./pages/IntroPage";
 import AllTeachersPage from './pages/AllTeachersPage';
+import ChartsPage from "./pages/ChartsPage";
 
 class Routes extends React.Component {
   render() {
@@ -17,6 +18,7 @@ class Routes extends React.Component {
         <Route path='/profile' component={ProfilePage} />
         <Route path='/tables' component={TablesPage} />
         <Route path='/404' component={NotFoundPage} />
+        <Route path='/charts' component={ChartsPage}/>
         {/* Handle 404 errors when any of routes did not match */}
         <Route component={NotFoundPage} />
       </Switch>
