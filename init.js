@@ -1,13 +1,15 @@
-// import { clientsStatiscs } from "./db/queries/views/statistics/clientsStatistics";
-// import { dealsStatistics } from "./db/queries/views/statistics/dealsStatistics";
-// import { leavingStatistics } from "./db/queries/views/statistics/leavingStatistics";
-// import { managerStatistics } from "./db/queries/views/statistics/managerStatistics";
-// import { rivalsStatistics } from "./db/queries/views/statistics/rivalsStatistics";
+let clientsStatiscs = require("./db/queries/views/statistics/clientsStatistics");
+let dealsStatistics = require("./db/queries/views/statistics/dealsStatistics");
+let leavingStatistics = require("./db/queries/views/statistics/leavingStatistics");
+let managerStatistics = require("./db/queries/views/statistics/managerStatistics");
+let rivalsStatistics = require("./db/queries/views/statistics/rivalsStatistics");
+
+let db = require("./db/models/index");
 
 module.exports.createViews = function(){
-    sequelize.query(`${clientsStatiscs}`);
-    sequelize.query(`${dealsStatistics}`);
-    sequelize.query(`${leavingStatistics}`);
-    sequelize.query(`${managerStatistics}`);
-    sequelize.query(`${rivalsStatistics}`);
+    db.sequelize.query(`${clientsStatiscs}`);
+    db.sequelize.query(`${dealsStatistics}`);
+    db.sequelize.query(`${leavingStatistics}`);
+    db.sequelize.query(`${managerStatistics}`);
+    db.sequelize.query(`${rivalsStatistics}`);
 }

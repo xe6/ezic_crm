@@ -1,7 +1,6 @@
 // Quantity of success deals made by each manager for the last 3 month
-export const managerStatistcs = `
-    delimiter //
-    create or replace view 'manager_statistics' as
+const managerStatistcs = `
+    create or replace view \`manager_statistics\` as
         select count(*) as deals_quantity,
                 concat(firstName,' ', lastName) as fio
         from deals join users on deals.Employee_concluded_id = users.id
@@ -10,5 +9,6 @@ export const managerStatistcs = `
             ) AND CURDATE())
         and stage='success'
         group by users.id;
-    //
 `;
+
+module.exports = managerStatistcs;

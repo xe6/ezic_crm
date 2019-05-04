@@ -1,7 +1,6 @@
 // Quantity of success and new deals of the company for the last 6 months
-export const dealsStatistics = `
-    delimiter //
-    create or replace view 'deals_statistics' as
+const dealsStatistics = `
+    create or replace view \`deals_statistics\` as
         select ifnull(stage, 'new') as stage, ifnull(q, 0) as deals_quantity, month from (
         select stage, count(*) as q,
         MONTHNAME(STR_TO_DATE(EXTRACT(MONTH from deals.createdAt) , '%m')) as month_name
@@ -29,5 +28,6 @@ export const dealsStatistics = `
         order by stage
         ) as t
         right join months on t.month_name = months.month;
-    //
 `;
+
+module.exports = dealsStatistics;

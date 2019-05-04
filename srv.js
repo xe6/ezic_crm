@@ -15,11 +15,7 @@ const SecuredRoutes = require(`${__dirname}/routes/securedApi`);
 srv.use('/api', ApiRoutes); //Mount
 srv.use('/secured', SecuredRoutes);
 //=====================================================
-sequelize.query(`${clientsStatiscs}`);
-    sequelize.query(`${dealsStatistics}`);
-    sequelize.query(`${leavingStatistics}`);
-    sequelize.query(`${managerStatistics}`);
-    sequelize.query(`${rivalsStatistics}`);
+
 const SRV_PORT = process.env.SRV_PORT || 3030;
 
 init.createViews();

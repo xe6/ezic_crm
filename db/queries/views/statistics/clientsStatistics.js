@@ -1,7 +1,6 @@
 // Quantity of clients who enrolled, has gone or now studying for the last 6 month
-export const clientsStatiscs = `
-    delimiter //
-    create or replace view 'clients_statistics' as
+const clientsStatiscs = `
+    create or replace view \`clients_statistics\` as
         select ifnull(t.q, 0) as clients_quantity, ifnull(t.status, 'active') as status, month
         from (select count(*) as q, status,
         MONTHNAME(STR_TO_DATE(EXTRACT(MONTH from clients.createdAt) , '%m')) as month_name
@@ -35,5 +34,6 @@ export const clientsStatiscs = `
         ) AND CURDATE())
         and clients.status='gone'
         group by status, month_name ) as t right join months on t.month_name = months.month;
-    //
 `;
+
+module.exports = clientsStatiscs;
