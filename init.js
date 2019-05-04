@@ -1,3 +1,4 @@
+let sumClients = require("./db/queries/views/statistics/sumClients");
 let clientsStatiscs = require("./db/queries/views/statistics/clientsStatistics");
 let dealsStatistics = require("./db/queries/views/statistics/dealsStatistics");
 let leavingStatistics = require("./db/queries/views/statistics/leavingStatistics");
@@ -7,6 +8,9 @@ let rivalsStatistics = require("./db/queries/views/statistics/rivalsStatistics")
 let db = require("./db/models/index");
 
 module.exports.createViews = function(){
+    db.sequelize.query(`${sumClients.sumActiveClients}`);
+    db.sequelize.query(`${sumClients.sumEnrolledClients}`);
+    db.sequelize.query(`${sumClients.sumGoneClients}`);
     db.sequelize.query(`${clientsStatiscs}`);
     db.sequelize.query(`${dealsStatistics}`);
     db.sequelize.query(`${leavingStatistics}`);
