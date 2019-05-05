@@ -3,7 +3,7 @@ import { MDBCol, MDBCard, MDBCardBody, MDBCardHeader, MDBRow } from 'mdbreact';
 import { Doughnut } from 'react-chartjs-2';
 
 const DoughnutChart = ({data}) => {
-    console.log("DOUGHNUT CHART - ", data);
+    // console.log("DOUGHNUT CHART - ", data);
     const dataDoughnut = {
         labels: ["Red", "Green", "Yellow", "Grey", "Dark Grey"],
         datasets: [{
@@ -14,8 +14,8 @@ const DoughnutChart = ({data}) => {
     };
 
     return (
-        <MDBRow className="mb-4">
-            <MDBCol md="12" lg="4" className="mb-4">
+        // <MDBRow className="mb-4">
+            <MDBCol md="5" className="mb-4">
                 <MDBCard className="mb-4">
                 <MDBCardHeader>Doughnut chart</MDBCardHeader>
                 <MDBCardBody >
@@ -23,7 +23,7 @@ const DoughnutChart = ({data}) => {
                 </MDBCardBody>
                 </MDBCard>
             </MDBCol>
-        </MDBRow>
+        // </MDBRow>
     );
 }
 

@@ -3,7 +3,6 @@ import { MDBCol, MDBCard, MDBCardBody, MDBCardHeader, MDBRow, MDBListGroup, MDBL
 import { Pie } from 'react-chartjs-2';
 
 const PieChart = ({data}) => {
-    console.log("PIE CHART - ", data)
     const dataPie = {
         labels: data ? data.map(item => item.reason) : [],
         datasets: [
@@ -17,9 +16,9 @@ const PieChart = ({data}) => {
 
     return (
         <MDBRow className="mb-4">
-            <MDBCol md="4" className="mb-4">
+            <MDBCol md="5" className="mb-4">
                 <MDBCard className="mb-4">
-                    <MDBCardHeader>Pie chart</MDBCardHeader>
+                    <MDBCardHeader>Reasons for leaving</MDBCardHeader>
                     <MDBCardBody>
                         <Pie data={dataPie} height={300} options={{responsive: true}} />
                     </MDBCardBody>

@@ -34,13 +34,11 @@ class AllCharts extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className="tc">
-                    <BarChart data = {this.state.statistics.clients}/>
-                    <BadgesStats data={this.state.statistics.rivals}/>
-                    <DoughnutChart data={this.state.statistics.managers}/>
-                    <LineChart data={this.state.statistics.deals}/>
-                    <PieChart data={this.state.statistics.leaving}/>
-                </div>
+                <BarChart data = {this.state.statistics.clients} period = {this.state.statistics.months}/>
+                <BadgesStats data={this.state.statistics.rivals}/>
+                <DoughnutChart data={this.state.statistics.managers}/>
+                <LineChart data={this.state.statistics.deals}/>
+                <PieChart data={this.state.statistics.leaving}/>
             </React.Fragment>
         );
     }

@@ -3,7 +3,7 @@ import { MDBCol, MDBCard, MDBCardBody, MDBCardHeader, MDBRow } from 'mdbreact';
 import { Line } from 'react-chartjs-2';
 
 const LineChart = ({data}) => { 
-    console.log("LINE CHART - ", data);
+    // console.log("LINE CHART - ", data);
     const dataLine = {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [
@@ -33,9 +33,9 @@ const LineChart = ({data}) => {
 
     return (
         <MDBRow className="mb-4">
-            <MDBCol md="12" lg="4" className="mb-4">
+            <MDBCol md="12" className="mb-4">
                 <MDBCard className="mb-4">
-                <MDBCardHeader>Line chart</MDBCardHeader>
+                <MDBCardHeader>Deals stats</MDBCardHeader>
                 <MDBCardBody>
                     <Line data={dataLine} options={{responsive: true }} />
                 </MDBCardBody>
