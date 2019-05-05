@@ -19,7 +19,7 @@ const Course = ({ _id, _name, _status, _price}) => {
                     </MDBCardBody>
                     <MDBCardFooter className="links-light profile-card-footer">
                         <span className="right">
-                            <a className="p-2" href="">
+                            <a className="p-2" href="#">
                                 Show More
                       <MDBIcon icon="image" className="ml-1" />
                             </a>

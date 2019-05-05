@@ -23,9 +23,6 @@ const BarChart = ({ data, period }) => {
         });
     } else return <h1>Loading...</h1>
 
-    console.dir(activeQ);
-
-
     let dataBar = {
         labels: period ? period.map(item => item.month) : [],
         datasets: [

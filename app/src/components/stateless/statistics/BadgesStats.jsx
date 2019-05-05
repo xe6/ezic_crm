@@ -3,7 +3,7 @@ import { MDBRow, MDBCol, MDBCard, MDBCardHeader, MDBCardBody, MDBListGroup, MDBL
 
 const BadgesStats = ({data}) => {
     return (
-        // <MDBRow className="mb-4">
+        <MDBRow className="mb-4">
             <MDBCol md="5" className="mb-4">
                 <MDBCard className="mb-4">
                     <MDBCardHeader>Rivals' average prices</MDBCardHeader>
@@ -25,7 +25,7 @@ const BadgesStats = ({data}) => {
                     </MDBCardBody>
                 </MDBCard>
             </MDBCol>
-        // </MDBRow>
+        </MDBRow>
     );
 }
 
