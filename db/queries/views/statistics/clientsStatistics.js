@@ -2,17 +2,17 @@
 const clientsStatiscs = `
     create or replace view \`Clients_statistics\` as
         SELECT IFNULL(QUANTITY,0) as quantity, IFNULL(STATUS, 'active') as STATUS, MONTH
-        FROM sumActiveClients RIGHT JOIN Months ON sumActiveClients.month_name = Months.month
+        FROM Sum_active_clients RIGHT JOIN Months ON Sum_active_clients.month_name = Months.month
 
         UNION ALL
 
         SELECT IFNULL(QUANTITY,0), IFNULL(STATUS, 'active') as STATUS, MONTH
-        FROM sumEnrolledClients RIGHT JOIN Months ON sumEnrolledClients.month_name = Months.month
+        FROM Sum_enrolled_clients RIGHT JOIN Months ON Sum_enrolled_clients.month_name = Months.month
 
         UNION ALL
 
         SELECT IFNULL(QUANTITY,0), IFNULL(STATUS, 'active') as STATUS, MONTH
-        FROM sumGoneClients RIGHT JOIN Months ON sumGoneClients.month_name = Months.month
+        FROM Sum_gone_clients RIGHT JOIN Months ON Sum_gone_clients.month_name = Months.month
 `;
 
 module.exports = clientsStatiscs;

@@ -1,5 +1,5 @@
 const sumActiveClients = `
-    CREATE OR REPLACE VIEW \`sumActiveClients\` AS         
+    CREATE OR REPLACE VIEW \`Sum_active_clients\` AS         
         SELECT COUNT(*) AS quantity, STATUS,
         MONTHNAME(STR_TO_DATE(EXTRACT(MONTH FROM Clients.createdAt) , '%m')) AS month_name
         FROM Clients
@@ -11,7 +11,7 @@ const sumActiveClients = `
 `;
 
 const sumEnrolledClients = `
-    CREATE OR REPLACE VIEW \`sumEnrolledClients\` AS         
+    CREATE OR REPLACE VIEW \`Sum_enrolled_clients\` AS         
         SELECT COUNT(*) AS quantity, STATUS,
         MONTHNAME(STR_TO_DATE(EXTRACT(MONTH FROM Clients.createdAt) , '%m')) AS month_name
         FROM Clients
@@ -23,7 +23,7 @@ const sumEnrolledClients = `
 `;
 
 const sumGoneClients = `
-    CREATE OR REPLACE VIEW \`sumGoneClients\` AS         
+    CREATE OR REPLACE VIEW \`Sum_gone_clients\` AS         
         SELECT COUNT(*) AS quantity, STATUS,
         MONTHNAME(STR_TO_DATE(EXTRACT(MONTH FROM Clients.createdAt) , '%m')) AS month_name
         FROM Clients
