@@ -24,7 +24,7 @@ class Charts extends Controller {
             averageRivalsPrices = await this.DB.sequelize.query("SELECT * FROM Average_rivals_prices", {
                 type: this.DB.sequelize.QueryTypes.SELECT
             });
-            isData = await true;
+            isData = true;
         } catch (err) {
             return res.status(500).json({ 
                 success: false,
