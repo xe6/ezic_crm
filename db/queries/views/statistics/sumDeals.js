@@ -4,7 +4,7 @@ CREATE OR REPLACE VIEW \`Sum_new_deals\` AS
     MONTHNAME(STR_TO_DATE(EXTRACT(MONTH FROM Deals.createdAt) , '%m')) AS month_name
     FROM Deals
     WHERE (Deals.stage_date BETWEEN (
-    SELECT DATE_SUB(CURDATE(), INTERVAL 6 MONTH)
+    SELECT DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
     ) AND CURDATE())
     AND Deals.stage='new'
     GROUP BY stage, month_name
@@ -17,9 +17,9 @@ CREATE OR REPLACE VIEW \`Sum_success_deals\` AS
     MONTHNAME(STR_TO_DATE(EXTRACT(MONTH FROM Deals.createdAt) , '%m')) AS month_name
     FROM Deals
     WHERE (Deals.stage_date BETWEEN (
-    SELECT DATE_SUB(CURDATE(), INTERVAL 6 MONTH)
+    SELECT DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
     ) AND CURDATE())
-    AND Deals.stage='new'
+    AND Deals.stage='success'
     GROUP BY stage, month_name
     ORDER BY stage;
 `;

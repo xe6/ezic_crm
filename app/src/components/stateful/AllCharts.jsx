@@ -20,7 +20,6 @@ class AllCharts extends Component {
                     hasData: true,
                     statistics: srvResponse.data
                 });
-                console.log(this.state.statistics)
             } else {
                 this.setState({
                     hasData: false,
@@ -37,7 +36,7 @@ class AllCharts extends Component {
                 <BarChart data = {this.state.statistics.clients} period = {this.state.statistics.months}/>
                 <BadgesStats data={this.state.statistics.rivals}/>
                 <DoughnutChart data={this.state.statistics.managers}/>
-                <LineChart data={this.state.statistics.deals}/>
+                <LineChart data={this.state.statistics.deals} period = {this.state.statistics.months}/>
                 <PieChart data={this.state.statistics.leaving}/>
             </React.Fragment>
         );

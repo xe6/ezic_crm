@@ -13,7 +13,7 @@ class Charts extends Controller {
             clientsStatistics = await this.DB.sequelize.query("SELECT * FROM Clients_statistics ORDER BY status, month", {
                 type: this.DB.sequelize.QueryTypes.SELECT
             });
-            dealsStatistics = await this.DB.sequelize.query("SELECT * FROM Deals_statistics", {
+            dealsStatistics = await this.DB.sequelize.query("SELECT * FROM Deals_statistics ORDER BY stage, month", {
                 type: this.DB.sequelize.QueryTypes.SELECT
             });
             leavingStatistics = await this.DB.sequelize.query("SELECT * FROM Leaving_statistics", {

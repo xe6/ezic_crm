@@ -3,7 +3,7 @@ import { MDBCol, MDBCard, MDBCardBody, MDBCardHeader, MDBRow } from 'mdbreact';
 import { Doughnut } from 'react-chartjs-2';
 
 const DoughnutChart = ({data}) => {
-    console.log("DOUGHNUT CHART - ", data);
+    
     const dataDoughnut = {
         labels: data ? data.map(item => {
             return item.fio

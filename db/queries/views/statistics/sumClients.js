@@ -4,7 +4,7 @@ const sumActiveClients = `
         MONTHNAME(STR_TO_DATE(EXTRACT(MONTH FROM Clients.createdAt) , '%m')) AS month_name
         FROM Clients
         WHERE (Clients.createdAt BETWEEN (
-        SELECT DATE_SUB(CURDATE(), INTERVAL 6 MONTH)
+        SELECT DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
         ) AND CURDATE())
         AND Clients.status='active'
         GROUP BY STATUS,MONTHNAME(STR_TO_DATE(EXTRACT(MONTH FROM Clients.createdAt) , '%m')) 
@@ -16,7 +16,7 @@ const sumEnrolledClients = `
         MONTHNAME(STR_TO_DATE(EXTRACT(MONTH FROM Clients.createdAt) , '%m')) AS month_name
         FROM Clients
         WHERE (Clients.createdAt BETWEEN (
-        SELECT DATE_SUB(CURDATE(), INTERVAL 6 MONTH)
+        SELECT DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
         ) AND CURDATE())
         AND Clients.status='enrolled'
         GROUP BY STATUS,MONTHNAME(STR_TO_DATE(EXTRACT(MONTH FROM Clients.createdAt) , '%m')) 
@@ -28,7 +28,7 @@ const sumGoneClients = `
         MONTHNAME(STR_TO_DATE(EXTRACT(MONTH FROM Clients.createdAt) , '%m')) AS month_name
         FROM Clients
         WHERE (Clients.createdAt BETWEEN (
-        SELECT DATE_SUB(CURDATE(), INTERVAL 6 MONTH)
+        SELECT DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
         ) AND CURDATE())
         AND Clients.status='gone'
         GROUP BY STATUS,MONTHNAME(STR_TO_DATE(EXTRACT(MONTH FROM Clients.createdAt) , '%m')) 
