@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
       price_per_month: DataTypes.FLOAT(7,2),
       quantity_students_planned: DataTypes.INTEGER,
       quantity_students_initial: DataTypes.INTEGER,
-      qunatity_students_now: DataTypes.INTEGER
+      quantity_students_now: DataTypes.INTEGER
     },
     {
       timestamps: true
