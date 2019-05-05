@@ -2,8 +2,8 @@ import React from 'react';
 import { MDBCol, MDBCard, MDBCardBody, MDBCardHeader, MDBRow } from 'mdbreact';
 import { Line } from 'react-chartjs-2';
 
-const LineChart = () => { 
-
+const LineChart = ({data}) => { 
+    console.log("LINE CHART - ", data);
     const dataLine = {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [

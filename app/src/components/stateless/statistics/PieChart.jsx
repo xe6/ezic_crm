@@ -2,8 +2,8 @@ import React from 'react';
 import { MDBCol, MDBCard, MDBCardBody, MDBCardHeader, MDBRow, MDBListGroup, MDBListGroupItem, MDBBadge, MDBIcon } from 'mdbreact';
 import { Pie } from 'react-chartjs-2';
 
-const PieChart = () => {
-
+const PieChart = ({data}) => {
+    console.log("PIE CHART - ", data)
     const dataPie = {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
         datasets: [
@@ -22,44 +22,6 @@ const PieChart = () => {
                     <MDBCardHeader>Pie chart</MDBCardHeader>
                     <MDBCardBody>
                         <Pie data={dataPie} height={300} options={{responsive: true}} />
-                    </MDBCardBody>
-                </MDBCard>
-                <MDBCard className="mb-4">
-                    <MDBCardBody>
-                        <MDBListGroup className="list-group-flush">
-                            <MDBListGroupItem>
-                                Sales
-                                <MDBBadge color="success-color" pill className="float-right">
-                                    22%
-                                    <MDBIcon icon="arrow-up" className="ml-1"/>
-                                </MDBBadge>
-                            </MDBListGroupItem>
-                            <MDBListGroupItem>
-                                Traffic
-                                <MDBBadge color="danger-color" pill className="float-right">
-                                    5%
-                                    <MDBIcon icon="arrow-down" className="ml-1"/>
-                                </MDBBadge>
-                            </MDBListGroupItem>
-                            <MDBListGroupItem>
-                                Orders
-                                <MDBBadge color="primary-color" pill className="float-right">
-                                    14
-                                </MDBBadge>
-                            </MDBListGroupItem>
-                            <MDBListGroupItem>
-                                Issues
-                                <MDBBadge color="primary-color" pill className="float-right">
-                                    123
-                                </MDBBadge>
-                            </MDBListGroupItem>
-                            <MDBListGroupItem>
-                                Messages
-                                <MDBBadge color="primary-color" pill className="float-right">
-                                    8
-                                </MDBBadge>
-                            </MDBListGroupItem>
-                        </MDBListGroup>
                     </MDBCardBody>
                 </MDBCard>
             </MDBCol>

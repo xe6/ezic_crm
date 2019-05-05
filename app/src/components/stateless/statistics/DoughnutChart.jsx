@@ -2,8 +2,8 @@ import React from 'react';
 import { MDBCol, MDBCard, MDBCardBody, MDBCardHeader, MDBRow } from 'mdbreact';
 import { Doughnut } from 'react-chartjs-2';
 
-const DoughnutChart = () => {
-
+const DoughnutChart = ({data}) => {
+    console.log("DOUGHNUT CHART - ", data);
     const dataDoughnut = {
         labels: ["Red", "Green", "Yellow", "Grey", "Dark Grey"],
         datasets: [{

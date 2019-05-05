@@ -6,7 +6,7 @@ const dealsStatistics = `
 
         UNION ALL
 
-        SELECT IFNULL(stage, 'new') AS stage, IFNULL(quantity, 0), MONTH FROM Sum_success_deals
+        SELECT IFNULL(stage, 'success') AS stage, IFNULL(quantity, 0), MONTH FROM Sum_success_deals
         RIGHT JOIN Months ON Sum_success_deals.month_name = Months.month;
 `;
 

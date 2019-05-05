@@ -2,24 +2,24 @@ import React from 'react';
 import { MDBCol, MDBCard, MDBCardBody, MDBRow } from 'mdbreact';
 import { Bar } from 'react-chartjs-2';
 
-const BarChart = () => {
-
+const BarChart = ({data}) => {
+    console.log("BAR CHART - ",data)
     const dataBar = {
         labels: ['Dec','Jan', 'Feb', 'Mar', 'Apr', 'May'],
         datasets: [
         {
             label: 'active',
-            data: [12, 39, 0, 50, 3, 32],
+            data: data,
             backgroundColor: 'rgba(245, 74, 85, 0.5)',
             borderWidth: 1
         }, {
             label: 'enrolled',
-            data: [56, 24, 5, 16, 45, 24],
+            data: data,
             backgroundColor: 'rgba(90, 173, 246, 0.5)',
             borderWidth: 1
         }, {
             label: 'gone',
-            data: [12, 25, 54, 3, 15, 44],
+            data: data,
             backgroundColor: 'rgba(245, 192, 50, 0.5)',
             borderWidth: 1
         }

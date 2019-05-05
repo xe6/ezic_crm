@@ -6,12 +6,12 @@ const clientsStatiscs = `
 
         UNION ALL
 
-        SELECT IFNULL(QUANTITY,0), IFNULL(STATUS, 'active') as STATUS, MONTH
+        SELECT IFNULL(QUANTITY,0), IFNULL(STATUS, 'enrolled') as STATUS, MONTH
         FROM Sum_enrolled_clients RIGHT JOIN Months ON Sum_enrolled_clients.month_name = Months.month
 
         UNION ALL
 
-        SELECT IFNULL(QUANTITY,0), IFNULL(STATUS, 'active') as STATUS, MONTH
+        SELECT IFNULL(QUANTITY,0), IFNULL(STATUS, 'gone') as STATUS, MONTH
         FROM Sum_gone_clients RIGHT JOIN Months ON Sum_gone_clients.month_name = Months.month
 `;
 
