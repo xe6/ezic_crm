@@ -5,10 +5,10 @@ import { Pie } from 'react-chartjs-2';
 const PieChart = ({data}) => {
     console.log("PIE CHART - ", data)
     const dataPie = {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+        labels: data ? data.map(item => item.reason) : [],
         datasets: [
         {
-            data: [300, 50, 100, 40, 120, 24, 52],
+            data: data ? data.map(item => item.gone_quantity) : [],
             backgroundColor: ['#F7464A', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360', '#ac64ad'],
             hoverBackgroundColor: ['#FF5A5E', '#5AD3D1', '#FFC870', '#A8B3C5', '#616774', '#da92db']
         }

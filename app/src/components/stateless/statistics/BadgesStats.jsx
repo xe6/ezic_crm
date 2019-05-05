@@ -2,7 +2,6 @@ import React from 'react';
 import { MDBRow, MDBCol, MDBCard, MDBCardHeader, MDBCardBody, MDBListGroup, MDBListGroupItem, MDBBadge, MDBIcon } from 'mdbreact';
 
 const BadgesStats = ({data}) => {
-    console.log("BADGES - ", data)
     return (
         <MDBRow className="mb-4">
             <MDBCol md="4" className="mb-4">
