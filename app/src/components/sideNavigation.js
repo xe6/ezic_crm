@@ -34,6 +34,12 @@ const TopNavigation = () => {
                         Courses
                     </MDBListGroupItem>
                 </NavLink>
+                <NavLink to="/charts" activeClassName="activeClass">
+                    <MDBListGroupItem>
+                        <MDBIcon icon="chart-bar" className="mr-3" style={{fontSize: "18px"}}/>
+                        Charts
+                    </MDBListGroupItem>
+                </NavLink>
                 <NavLink to="/tables" activeClassName="activeClass">
                     <MDBListGroupItem>
                         <MDBIcon icon="table" className="mr-3"/>

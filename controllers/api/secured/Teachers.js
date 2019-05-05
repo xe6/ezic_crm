@@ -5,6 +5,7 @@ class Teachers extends Controller {
         let teachers = false;
         try {
             teachers = await this.DB.Teacher.findAll();
+            console.log(teachers)
         } catch (err) {
             return res.status(500).json({ 
                 success: false,
