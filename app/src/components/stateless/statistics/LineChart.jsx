@@ -73,16 +73,14 @@ const LineChart = ({data, period}) => {
     };
 
     return (
-        <MDBRow className="mb-4">
-            <MDBCol md="12" className="mb-4">
-                <MDBCard className="mb-4">
-                <MDBCardHeader>Deals statistics for the last year</MDBCardHeader>
-                <MDBCardBody>
-                    <Line data={dataLine} options={{responsive: true }} />
-                </MDBCardBody>
-                </MDBCard>
-            </MDBCol>
-        </MDBRow>
+        <MDBCol md="9" className="mb-4">
+            <MDBCard className="mb-4">
+            <MDBCardHeader>Deals statistics for the last year</MDBCardHeader>
+            <MDBCardBody>
+                <Line data={dataLine} options={{responsive: true }} />
+            </MDBCardBody>
+            </MDBCard>
+        </MDBCol>
     );
 }
 

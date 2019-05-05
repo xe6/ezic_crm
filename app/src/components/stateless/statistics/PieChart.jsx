@@ -15,16 +15,14 @@ const PieChart = ({data}) => {
     }
 
     return (
-        <MDBRow className="mb-4">
-            <MDBCol md="5" className="mb-4">
-                <MDBCard className="mb-4">
-                    <MDBCardHeader>Reasons for leaving</MDBCardHeader>
-                    <MDBCardBody>
-                        <Pie data={dataPie} height={300} options={{responsive: true}} />
-                    </MDBCardBody>
-                </MDBCard>
-            </MDBCol>
-        </MDBRow>
+        <MDBCol md="5" className="mb-4">
+            <MDBCard className="mb-4">
+                <MDBCardHeader>Reasons for leaving</MDBCardHeader>
+                <MDBCardBody>
+                    <Pie data={dataPie} height={300} options={{responsive: true}} />
+                </MDBCardBody>
+            </MDBCard>
+        </MDBCol>
     );
 }
 

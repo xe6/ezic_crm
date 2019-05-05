@@ -18,7 +18,6 @@ const DoughnutChart = ({data}) => {
     };
 
     return (
-        <MDBRow className="mb-4">
             <MDBCol md="5" className="mb-4">
                 <MDBCard className="mb-4">
                 <MDBCardHeader>Success deals made by managers for the last 3 months</MDBCardHeader>
@@ -27,7 +26,6 @@ const DoughnutChart = ({data}) => {
                 </MDBCardBody>
                 </MDBCard>
             </MDBCol>
-        </MDBRow>
     );
 }
 
