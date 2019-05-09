@@ -6,7 +6,7 @@ class Clients extends Controller {
         try {
             clients = await this.DB.Client.findAll();
         } catch (err) {
-            return res.status(500).json({ 
+            return res.status(500).json({
                 success: false,
                 error: err.message,
                 data: null
@@ -19,11 +19,36 @@ class Clients extends Controller {
                 data: clients
             });
         }
-        return res.status(404).json({ 
+        return res.status(404).json({
             success: false,
             error: "No Data available",
             data: null
         });
+    }
+
+    async add(req, res) {
+        const client = {
+            contact_name: req.body.contact,
+            phone_number: req.body.phone,
+            email: req.body.email,
+            status: req.body.status
+        };
+
+        const created = await this.DB.Client.create(client);
+
+        if (created) {
+            return res.status(201).json({
+                success: true,
+                message: `Client record was added`
+            });
+        }
+
+        //In case the instance was not created
+
+        return res.status(500).json({
+            success: false,
+            message: "Server error occurred"
+        })
     }
 }
 
