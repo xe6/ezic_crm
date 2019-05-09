@@ -14,6 +14,8 @@ import {
 
 import SelectClientStatus from "../../stateless/SelectClientStatus";
 
+import { aFetch } from "../../../utils/";
+
 class AddClient extends Component {
 
     state = {
@@ -44,7 +46,7 @@ class AddClient extends Component {
                                 <MDBCardHeader className="form-header dusty-grass-gradient rounded">
                                     <h3 className="my-3">
                                         {this.checkActionStatus()}
-                  </h3>
+                                    </h3>
                                 </MDBCardHeader>
                                 <form onSubmit={(e) => this.handleAdd(e)}>
                                     <div>
@@ -145,7 +147,38 @@ class AddClient extends Component {
         }
 
         //Send request to server
+        this.setState({
+            pending: true
+        });
+
+        aFetch("/secured/clients", {
+            method: "POST",
+            body: JSON.stringify(clientData)
+        }).then((srvResponse) => {
+            if (srvResponse.success) {
+                this.setState({
+                    pending: false,
+                    success: true,
+                    failure: false
+                });
+            } else {
+                this.setState({
+                    pending: false,
+                    success: false,
+                    failure: true,
+                    failureMessage: srvResponse.message
+                });
+            }
+        }).catch((err) => {
+            this.setState({
+                pending: false,
+                success: false,
+                failure: true,
+                failureMessage: err.message
+            });
+        });
     }
+
 }
 
 export default AddClient;
