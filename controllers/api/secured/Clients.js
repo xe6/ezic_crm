@@ -50,6 +50,28 @@ class Clients extends Controller {
             message: "Server error occurred"
         })
     }
+
+    async delete(req, res){
+        const deleted = await this.DB.Client.destroy({
+            where: {
+                id: req.body.id
+            }
+        });
+
+        if (deleted) {
+            return res.status(200).json({
+                success: true,
+                message: `Client record was deleted`
+            });
+        }
+
+        //In case the instance was not deleted
+
+        return res.status(500).json({
+            success: false,
+            message: "Server error occurred"
+        })
+    }
 }
 
 module.exports = new Clients();

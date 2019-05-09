@@ -145,7 +145,9 @@ class AddClient extends Component {
 
         //Send request to server
         this.setState({
-            pending: true
+            pending: true,
+            success: false,
+            failure: false
         });
 
         aFetch("/secured/clients", {

@@ -16,6 +16,7 @@ router.get('/teachers', (req, res) => TeachersController.getAll(req, res));
 //Clients
 router.get('/clients', (req, res) => ClientsController.getAll(req, res));
 router.post('/clients', (req, res) => ClientsController.add(req, res));
+router.delete('/clients', (req, res) => ClientsController.delete(req, res));
 //Courses
 router.get('/courses', (req, res) => CoursesController.getAll(req, res));
 //Charts

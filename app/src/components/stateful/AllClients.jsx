@@ -3,6 +3,7 @@ import { aFetch } from "../../utils";
 import { MDBRow, MDBTable, MDBTableHead, MDBTableBody, MDBBtn, MDBModal, MDBModalHeader, MDBModalBody } from "mdbreact";
 
 import AddClient from "./modals/AddClient";
+import DeleteClient from "./modals/DeleteClient";
 
 class AllClients extends Component {
     state = {
@@ -11,17 +12,24 @@ class AllClients extends Component {
         errorMsg: "",
         modalAdd: false,
         modalEdit: false,
-        modalDelete: false
+        modalDelete: false,
+        currentItem: 0
     };
 
     constructor(props) {
         super(props);
-        this.fetchClients.bind(this, this.fetchClients);
+        this.fetchClients = this.fetchClients.bind(this);
     }
 
 
     //Modal display toggler
-    toggle = nr => () => {
+    toggle = (nr, id) => () => {
+        if(id){
+            this.setState({
+                currentItem: id
+            })
+        }
+
         let modalName = "modal" + nr;
         this.setState({
             [modalName]: !this.state[modalName]
@@ -57,6 +65,25 @@ class AllClients extends Component {
                     </MDBModalBody>
                 </MDBModal>
 
+                <MDBModal
+                    toggle={this.toggle("Delete")}
+                    isOpen={this.state.modalDelete}
+                    size="md"
+                    position="center"
+                >
+                    <MDBModalHeader>Delete Client</MDBModalHeader>
+                    <MDBModalBody
+                        className="text-center"
+                        style={{ background: "#f4eded", color: "#111" }}
+                    >
+                        <DeleteClient
+                            id={this.state.currentItem}
+                            requestRefetch={() => this.fetchClients()}
+                            closeModal={this.toggle("Delete")}>
+                        </DeleteClient>
+                    </MDBModalBody>
+                </MDBModal>
+
                 <MDBRow className="justify-content-center">
 
                     <MDBTable>
@@ -80,8 +107,8 @@ class AllClients extends Component {
                                         <td>{client.phone_number}</td>
                                         <td>{client.email}</td>
                                         <td>{client.status}</td>
-                                        <MDBBtn outline color="info" onClick={this.toggle("Edit")}>Edit</MDBBtn>
-                                        <MDBBtn outline color="danger" onClick={this.toggle("Delete")}>Delete</MDBBtn>
+                                        <MDBBtn outline color="info" onClick={this.toggle("Edit", client.id)}>Edit</MDBBtn>
+                                        <MDBBtn outline color="danger" onClick={this.toggle("Delete", client.id)}>Delete</MDBBtn>
                                     </tr>
                                 })
                                 :
