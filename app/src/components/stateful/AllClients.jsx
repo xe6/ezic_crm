@@ -1,12 +1,26 @@
 import React, { Component } from 'react';
 import { aFetch } from "../../utils";
-import { MDBRow, MDBTable, MDBTableHead, MDBTableBody } from "mdbreact";
+import { MDBRow, MDBTable, MDBTableHead, MDBTableBody, MDBBtn, MDBModal, MDBModalHeader, MDBModalBody } from "mdbreact";
+
+import AddClient from "./modals/AddClient";
 
 class AllClients extends Component {
     state = {
         hasData: false,
         clients: [],
-        errorMsg: ""
+        errorMsg: "",
+        modalAdd: false,
+        modalEdit: false,
+        modalDelete: false
+    };
+
+
+    //Modal display toggler
+    toggle = nr => () => {
+        let modalName = "modal" + nr;
+        this.setState({
+            [modalName]: !this.state[modalName]
+        });
     };
 
     componentDidMount() {
@@ -29,7 +43,30 @@ class AllClients extends Component {
     render() {
         return (
             <React.Fragment>
+                <MDBBtn outline color="success" onClick={this.toggle("Add")}>Add Client</MDBBtn>
+
+                {/* MODALS */}
+                <MDBModal
+                    toggle={this.toggle("Add")}
+                    isOpen={this.state.modalAdd}
+                    size="md"
+                    position="center"
+                >
+                    <MDBModalHeader>Add Client</MDBModalHeader>
+                    <MDBModalBody
+                        className="text-center"
+                        style={{ background: "#f4eded", color: "#111" }}
+                    >
+                    <AddClient></AddClient>
+                        
+                        <MDBBtn outline color="primary" onClick={this.toggle("Add")}>
+                            Close
+                        </MDBBtn>
+                    </MDBModalBody>
+                </MDBModal>
+
                 <MDBRow className="justify-content-center">
+
                     <MDBTable>
                         <MDBTableHead color="pink" textWhite>
                             <tr>
@@ -38,6 +75,7 @@ class AllClients extends Component {
                                 <th>Phone Number</th>
                                 <th>Email</th>
                                 <th>Status</th>
+                                <th>Actions</th>
                             </tr>
                         </MDBTableHead>
                         <MDBTableBody>
@@ -50,6 +88,8 @@ class AllClients extends Component {
                                         <td>{client.phone_number}</td>
                                         <td>{client.email}</td>
                                         <td>{client.status}</td>
+                                        <MDBBtn outline color="info" onClick={this.toggle("Edit")}>Edit</MDBBtn>
+                                        <MDBBtn outline color="danger" onClick={this.toggle("Delete")}>Delete</MDBBtn>
                                     </tr>
                                 })
                                 :
