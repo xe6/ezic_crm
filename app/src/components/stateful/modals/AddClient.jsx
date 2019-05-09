@@ -31,9 +31,6 @@ class AddClient extends Component {
         this.phoneRef = React.createRef();
         this.emailRef = React.createRef();
         this.statusRef = React.createRef();
-        //===============|Binding This to ev. handler|===============
-
-        //===========================================================
     }
 
     render() {
@@ -161,6 +158,8 @@ class AddClient extends Component {
                     success: true,
                     failure: false
                 });
+
+                this.props.requestRefetch();
             } else {
                 this.setState({
                     pending: false,

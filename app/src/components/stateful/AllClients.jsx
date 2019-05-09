@@ -14,6 +14,11 @@ class AllClients extends Component {
         modalDelete: false
     };
 
+    constructor(props) {
+        super(props);
+        this.fetchClients.bind(this, this.fetchClients);
+    }
+
 
     //Modal display toggler
     toggle = nr => () => {
@@ -24,20 +29,7 @@ class AllClients extends Component {
     };
 
     componentDidMount() {
-        aFetch("/secured/clients").then((srvResponse) => {
-            if (srvResponse.success) {
-                this.setState({
-                    hasData: true,
-                    clients: srvResponse.data
-                });
-            } else {
-                this.setState({
-                    hasData: false,
-                    errorMsg: srvResponse.error
-                })
-            }
-
-        });
+        this.fetchClients();
     }
 
     render() {
@@ -57,8 +49,8 @@ class AllClients extends Component {
                         className="text-center"
                         style={{ background: "#f4eded", color: "#111" }}
                     >
-                    <AddClient></AddClient>
-                        
+                        <AddClient requestRefetch={() => this.fetchClients()}></AddClient>
+
                         <MDBBtn outline color="primary" onClick={this.toggle("Add")}>
                             Close
                         </MDBBtn>
@@ -101,6 +93,23 @@ class AllClients extends Component {
 
 
         )
+    }
+
+    fetchClients() {
+        aFetch("/secured/clients").then((srvResponse) => {
+            if (srvResponse.success) {
+                this.setState({
+                    hasData: true,
+                    clients: srvResponse.data
+                });
+            } else {
+                this.setState({
+                    hasData: false,
+                    errorMsg: srvResponse.error
+                })
+            }
+
+        });
     }
 }
 
