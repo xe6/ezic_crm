@@ -5,11 +5,15 @@ const TeachersController = require("../controllers/api/secured/Teachers");
 const ClientsController = require("../controllers/api/secured/Clients");
 const CoursesController = require("../controllers/api/secured/Courses");
 const ChartsController = require("../controllers/api/secured/Charts");
+const DealsController = require("../controllers/api/secured/Deals");
 
 // Routers
 // =============================================================================
 router.use(SecuredMiddleware);
 router.get('/', (req, res) => res.json({ msg: "Hi!" }));
+
+//Deals
+router.get('/deals', (req, res) => DealsController.getAll(req, res));
 
 //Teachers
 router.get('/teachers', (req, res) => TeachersController.getAll(req, res));
