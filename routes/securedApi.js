@@ -13,6 +13,7 @@ router.get('/', (req, res) => res.json({ msg: "Hi!" }));
 
 //Teachers
 router.get('/teachers', (req, res) => TeachersController.getAll(req, res));
+router.post('/teachers', (req, res) => TeachersController.add(req, res));
 //Clients
 router.get('/clients', (req, res) => ClientsController.getAll(req, res));
 router.post('/clients', (req, res) => ClientsController.add(req, res));
