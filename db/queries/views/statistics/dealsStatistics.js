@@ -1,12 +1,14 @@
 // Quantity of success and new deals of the company for the last 6 months
 const dealsStatistics = `
     create or replace view \`Deals_statistics\` as
-        SELECT IFNULL(stage, 'new') AS stage, IFNULL(quantity, 0) as quantity, month FROM Sum_new_deals
+        SELECT IFNULL(stage, 'new') AS stage, IFNULL(quantity, 0) as quantity, month, id as ord 
+        FROM Sum_new_deals
         RIGHT JOIN Months ON Sum_new_deals.month_name = Months.month
 
         UNION ALL
 
-        SELECT IFNULL(stage, 'success') AS stage, IFNULL(quantity, 0) as quantity, month FROM Sum_success_deals
+        SELECT IFNULL(stage, 'success') AS stage, IFNULL(quantity, 0) as quantity, month, id as ord 
+        FROM Sum_success_deals
         RIGHT JOIN Months ON Sum_success_deals.month_name = Months.month;
 `;
 

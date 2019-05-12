@@ -1,5 +1,5 @@
 import React from 'react';
-import { MDBCol, MDBCard, MDBCardBody, MDBCardHeader, MDBRow } from 'mdbreact';
+import { MDBCol, MDBCard, MDBCardBody, MDBCardHeader } from 'mdbreact';
 import { Line } from 'react-chartjs-2';
 
 const LineChart = ({data, period}) => { 
@@ -8,7 +8,6 @@ const LineChart = ({data, period}) => {
     let successQ = [];
 
     if (data) {
-        console.log(data)
         data.map((item) => {
             switch (item.stage) {
                 case "new":
@@ -19,13 +18,14 @@ const LineChart = ({data, period}) => {
                     return null
             }
         });
+        console.log(data)
     } else return <h1>Loading...</h1>
 
     const dataLine = {
         labels: period ? period.map(item => item.month) : [],
         datasets: [
           {
-            label: 'Success deals',
+            label: 'New deals',
             fill: false,
             lineTension: 0.1,
             backgroundColor: 'rgba(66, 215, 244,0.4)',
@@ -47,7 +47,7 @@ const LineChart = ({data, period}) => {
                 return item.quantity
             })
           }, {
-            label: 'New deals',
+            label: 'Success deals',
             fill: false,
             lineTension: 0.1,
             backgroundColor: 'rgba(247, 70, 74,0.4)',

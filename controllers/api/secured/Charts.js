@@ -10,10 +10,10 @@ class Charts extends Controller {
         let averageRivalsPrices = false;
         let months = false;
         try {
-            clientsStatistics = await this.DB.sequelize.query("SELECT * FROM Clients_statistics ORDER BY status, month", {
+            clientsStatistics = await this.DB.sequelize.query("SELECT * FROM Clients_statistics ORDER BY ord", {
                 type: this.DB.sequelize.QueryTypes.SELECT
             });
-            dealsStatistics = await this.DB.sequelize.query("SELECT * FROM Deals_statistics ORDER BY stage, month", {
+            dealsStatistics = await this.DB.sequelize.query("SELECT * FROM Deals_statistics ORDER BY stage, ord", {
                 type: this.DB.sequelize.QueryTypes.SELECT
             });
             leavingStatistics = await this.DB.sequelize.query("SELECT * FROM Leaving_statistics", {
@@ -25,7 +25,7 @@ class Charts extends Controller {
             averageRivalsPrices = await this.DB.sequelize.query("SELECT * FROM Average_rivals_prices", {
                 type: this.DB.sequelize.QueryTypes.SELECT
             });
-            months = await this.DB.sequelize.query("SELECT * FROM Months ORDER BY month", {
+            months = await this.DB.sequelize.query("SELECT * FROM Months", {
                 type: this.DB.sequelize.QueryTypes.SELECT
             });
             isData = true;

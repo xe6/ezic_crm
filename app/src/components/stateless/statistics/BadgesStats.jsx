@@ -1,5 +1,5 @@
 import React from 'react';
-import { MDBRow, MDBCol, MDBCard, MDBCardHeader, MDBCardBody, MDBListGroup, MDBListGroupItem, MDBBadge, MDBIcon } from 'mdbreact';
+import { MDBCol, MDBCard, MDBCardHeader, MDBCardBody, MDBListGroup, MDBListGroupItem, MDBBadge, MDBIcon } from 'mdbreact';
 
 const BadgesStats = ({data}) => {
     return (

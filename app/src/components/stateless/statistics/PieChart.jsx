@@ -1,5 +1,5 @@
 import React from 'react';
-import { MDBCol, MDBCard, MDBCardBody, MDBCardHeader, MDBRow } from 'mdbreact';
+import { MDBCol, MDBCard, MDBCardBody, MDBCardHeader } from 'mdbreact';
 import { Pie } from 'react-chartjs-2';
 
 const PieChart = ({data}) => {
