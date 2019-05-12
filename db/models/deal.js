@@ -7,7 +7,6 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       autoIncrement: true
     },
-    contact_name: DataTypes.STRING,
     contact_number: DataTypes.STRING,
     extra_info: DataTypes.TEXT
   },

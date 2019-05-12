@@ -16,6 +16,12 @@ const TopNavigation = () => {
                         Dashboard
                     </MDBListGroupItem>
                 </NavLink>
+                <NavLink to="/deals" activeClassName="activeClass">
+                    <MDBListGroupItem>
+                        <MDBIcon icon="briefcase" className="mr-3" style={{fontSize: "25px"}} />
+                        Deals
+                    </MDBListGroupItem>
+                </NavLink>
                 <NavLink to="/clients" activeClassName="activeClass">
                     <MDBListGroupItem>
                         <MDBIcon icon="male" className="mr-3" style={{fontSize: "25px"}} />
