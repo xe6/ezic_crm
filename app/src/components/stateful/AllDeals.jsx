@@ -24,7 +24,7 @@ class AllDeals extends Component {
 
   constructor(props) {
     super(props);
-    //this.fetchDeals = this.fetchDeals.bind(this);
+    this.fetchDeals = this.fetchDeals.bind(this);
   }
 
   //Modal display toggler
@@ -42,7 +42,7 @@ class AllDeals extends Component {
   };
 
   componentDidMount() {
-    // this.fetchDeals();
+     this.fetchDeals();
   }
 
   render() {
@@ -54,34 +54,40 @@ class AllDeals extends Component {
 
         <MDBRow className="justify-content-center">
           <MDBTable>
-            <MDBTableHead color="primary" textWhite>
+            <MDBTableHead color="primary" textBlack>
               <tr>
                 <th>#</th>
                 <th>Contact</th>
                 <th>Extra Info</th>
+                <th>Course</th>
+                <th>Teacher</th>
+                <th>Client</th>
+                <th>Employee</th>
               </tr>
             </MDBTableHead>
             <MDBTableBody>
               {this.state.hasData ? (
-                this.state.clients.map(client => {
+                this.state.deals.map(deal => {
                   return (
                     <tr>
-                      <td>{client.id}</td>
-                      <td>{client.contact_name}</td>
-                      <td>{client.phone_number}</td>
-                      <td>{client.email}</td>
-                      <td>{client.status}</td>
+                      <td>{deal.deal_id}</td>
+                      <td>{deal.contact_number}</td>
+                      <td>{deal.extra_info}</td>
+                      <td>{deal.course_name}</td>
+                      <td>{deal.teacher}</td>
+                      <td>{deal.client}</td>
+                      <td>{deal.employee_concluded}</td>
                       <MDBBtn
                         outline
                         color="info"
-                        onClick={this.toggle("Edit", client.id)}
+                        onClick={this.toggle("Edit", deal.id)}
                       >
                         Edit
                       </MDBBtn>
                       <MDBBtn
                         outline
                         color="danger"
-                        onClick={this.toggle("Delete", client.id)}
+                        onClick={this.toggle("Delete", deal.id)}
                       >
                         Delete
                       </MDBBtn>
@@ -98,22 +104,22 @@ class AllDeals extends Component {
     );
   }
 
-  // fetchDeals() {
-  //     aFetch("/secured/deals").then((srvResponse) => {
-  //         if (srvResponse.success) {
-  //             this.setState({
-  //                 hasData: true,
-  //                 deals: srvResponse.data
-  //             });
-  //         } else {
-  //             this.setState({
-  //                 hasData: false,
-  //                 errorMsg: srvResponse.error
-  //             })
-  //         }
+  fetchDeals() {
+      aFetch("/secured/deals").then((srvResponse) => {
+          if (srvResponse.success) {
+              this.setState({
+                  hasData: true,
+                  deals: srvResponse.data[0]
+              });
+          } else {
+              this.setState({
+                  hasData: false,
+                  errorMsg: srvResponse.error
+              })
+          }
 
-  //     });
-  // }
+      });
+  }
 }
 
 export default AllDeals;
