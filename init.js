@@ -12,11 +12,11 @@ module.exports.createViews = function(){
     db.sequelize.query(`${sumClients.sumActiveClients}`);
     db.sequelize.query(`${sumClients.sumEnrolledClients}`);
     db.sequelize.query(`${sumClients.sumGoneClients}`);
-    // db.sequelize.query(`${sumDeals.sumNewDeals}`);
-    // db.sequelize.query(`${sumDeals.sumSuccessDeals}`);
+    db.sequelize.query(`${sumDeals.sumNewDeals}`);
+    db.sequelize.query(`${sumDeals.sumSuccessDeals}`);
     db.sequelize.query(`${clientsStatiscs}`);
-    // db.sequelize.query(`${dealsStatistics}`);
+    db.sequelize.query(`${dealsStatistics}`);
     db.sequelize.query(`${leavingStatistics}`);
-    // db.sequelize.query(`${managerStatistics}`);
+    db.sequelize.query(`${managerStatistics}`);
     db.sequelize.query(`${rivalsStatistics}`);
 }

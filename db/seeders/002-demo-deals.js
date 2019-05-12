@@ -129,7 +129,7 @@ module.exports = {
       Course_id: 4,
       Teacher_id: 3,
       Client_id: 3,
-      Employee_concluded_id: 3
+      Employee_concluded_id: 2
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
       extra_info: faker.lorem.paragraph(),
@@ -156,7 +156,7 @@ module.exports = {
       Course_id: 4,
       Teacher_id: 3,
       Client_id: 3,
-      Employee_concluded_id: 3
+      Employee_concluded_id: 1
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
       extra_info: faker.lorem.paragraph(),
@@ -165,7 +165,16 @@ module.exports = {
       Course_id: 4,
       Teacher_id: 3,
       Client_id: 3,
-      Employee_concluded_id: 3
+      Employee_concluded_id: 2
+    }, {
+      contact_number: faker.phone.phoneNumberFormat(),
+      extra_info: faker.lorem.paragraph(),
+      createdAt: "2019-03-18 12:00:00",
+      updatedAt: "2019-03-18 12:00:00",
+      Course_id: 4,
+      Teacher_id: 3,
+      Client_id: 3,
+      Employee_concluded_id: 1
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
       extra_info: faker.lorem.paragraph(),
@@ -178,12 +187,12 @@ module.exports = {
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
       extra_info: faker.lorem.paragraph(),
-      createdAt: "2019-03-18 12:00:00",
-      updatedAt: "2019-03-18 12:00:00",
+      createdAt: "2019-04-18 12:00:00",
+      updatedAt: "2019-04-18 12:00:00",
       Course_id: 4,
       Teacher_id: 3,
       Client_id: 3,
-      Employee_concluded_id: 3
+      Employee_concluded_id: 1
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
       extra_info: faker.lorem.paragraph(),
@@ -192,7 +201,7 @@ module.exports = {
       Course_id: 4,
       Teacher_id: 3,
       Client_id: 3,
-      Employee_concluded_id: 3
+      Employee_concluded_id: 1
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
       extra_info: faker.lorem.paragraph(),
@@ -201,16 +210,7 @@ module.exports = {
       Course_id: 4,
       Teacher_id: 3,
       Client_id: 3,
-      Employee_concluded_id: 3
-    }, {
-      contact_number: faker.phone.phoneNumberFormat(),
-      extra_info: faker.lorem.paragraph(),
-      createdAt: "2019-04-18 12:00:00",
-      updatedAt: "2019-04-18 12:00:00",
-      Course_id: 4,
-      Teacher_id: 3,
-      Client_id: 3,
-      Employee_concluded_id: 3
+      Employee_concluded_id: 2
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
       extra_info: faker.lorem.paragraph(),
@@ -219,7 +219,7 @@ module.exports = {
       Course_id: 4,
       Teacher_id: 3,
       Client_id: 3,
-      Employee_concluded_id: 3
+      Employee_concluded_id: 2
     }], {});
   },
 
