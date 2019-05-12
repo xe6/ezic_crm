@@ -11,13 +11,6 @@ module.exports = {
       contact_number: {
         type: Sequelize.STRING
       },
-      stage: {
-        type: Sequelize.ENUM("new", "contract_signed", "payment", "success"),
-        defaultValue: "new"
-      },
-      stage_date: {
-        type: Sequelize.DATE
-      },
       extra_info: {
         type: Sequelize.TEXT
       },

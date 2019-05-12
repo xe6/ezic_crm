@@ -60,6 +60,21 @@ module.exports = {
                 }
             )   
         })
+        .then(() => {
+            return queryInterface.addColumn(
+                "DealsDynamics",
+                'Deal_id', //foreign key should in single quotes and in upper case  
+                {
+                    type: Sequelize.INTEGER,
+                    references: {
+                        model: "Deals",
+                        key: "id"
+                    },
+                    onUpdate: "CASCADE",
+                    onDelete: "SET NULL"
+                }
+            )
+        })
     },
 
     down: (queryInterface, Sequelize) => {
@@ -83,6 +98,12 @@ module.exports = {
             return queryInterface.removeColumn(
                 "Deals",
                 "Employee_concluded_Id"
+            )
+        })
+        .then(() => {
+            return queryInterface.removeColumn(
+                "DealsDynamics",
+                "Deal_id"
             )
         })
     }

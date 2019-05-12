@@ -6,8 +6,6 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert("Deals", [{
       contact_number: faker.phone.phoneNumberFormat(),
-      stage: "new",
-      stage_date: "2019-04-25 15:00:00",
       extra_info: faker.lorem.sentence(),
       createdAt: "2019-04-25 15:00:00",
       updatedAt: "2019-04-25 15:00:00",
@@ -17,8 +15,6 @@ module.exports = {
       Employee_concluded_id: 1
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
-      stage: "new",
-      stage_date: "2019-04-28 15:00:00",
       extra_info: faker.lorem.words(),
       createdAt: "2019-04-28 16:00:00",
       updatedAt: "2019-04-28 16:00:00",
@@ -28,8 +24,6 @@ module.exports = {
       Employee_concluded_id: 2
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
-      stage: "contract_signed",
-      stage_date: "2019-04-13 12:00:00",
       extra_info: faker.lorem.sentences(),
       createdAt: "2019-04-13 12:00:00",
       updatedAt: "2019-04-13 12:00:00",
@@ -39,8 +33,6 @@ module.exports = {
       Employee_concluded_id: 2
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
-      stage: "contract_signed",
-      stage_date: "2019-04-11 13:00:00",
       extra_info: faker.lorem.paragraph(),
       createdAt: "2019-04-11 13:00:00",
       updatedAt: "2019-04-11 13:00:00",
@@ -50,8 +42,6 @@ module.exports = {
       Employee_concluded_id: 3
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
-      stage: "payment",
-      stage_date: "2019-05-02 19:00:00",
       extra_info: faker.lorem.paragraph(),
       createdAt: "2019-05-02 19:00:00",
       updatedAt: "2019-05-02 19:00:00",
@@ -61,8 +51,6 @@ module.exports = {
       Employee_concluded_id: 3
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
-      stage: "payment",
-      stage_date: "2019-05-02 19:00:00",
       extra_info: faker.lorem.sentences(),
       createdAt: "2019-05-02 19:00:00",
       updatedAt: "2019-05-02 19:00:00",
@@ -72,8 +60,6 @@ module.exports = {
       Employee_concluded_id: 3
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
-      stage: "success",
-      stage_date: "2018-12-16 15:00:00",
       extra_info: faker.lorem.sentences(),
       createdAt: "2018-12-16 15:00:00",
       updatedAt: "2018-12-16 15:00:00",
@@ -83,8 +69,6 @@ module.exports = {
       Employee_concluded_id: 1
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
-      stage: "success",
-      stage_date: "2019-01-18 12:00:00",
       extra_info: faker.lorem.paragraph(),
       createdAt: "2019-01-18 12:00:00",
       updatedAt: "2019-01-18 12:00:00",
@@ -94,8 +78,6 @@ module.exports = {
       Employee_concluded_id: 2
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
-      stage: "success",
-      stage_date: "2019-02-18 12:00:00",
       extra_info: faker.lorem.paragraph(),
       createdAt: "2019-02-18 12:00:00",
       updatedAt: "2019-02-18 12:00:00",
@@ -105,8 +87,6 @@ module.exports = {
       Employee_concluded_id: 1
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
-      stage: "success",
-      stage_date: "2019-04-18 12:00:00",
       extra_info: faker.lorem.paragraph(),
       createdAt: "2019-03-18 12:00:00",
       updatedAt: "2019-03-18 12:00:00",
@@ -116,8 +96,6 @@ module.exports = {
       Employee_concluded_id: 3
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
-      stage: "success",
-      stage_date: "2019-03-18 12:00:00",
       extra_info: faker.lorem.paragraph(),
       createdAt: "2019-03-18 12:00:00",
       updatedAt: "2019-03-18 12:00:00",
@@ -127,8 +105,6 @@ module.exports = {
       Employee_concluded_id: 2
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
-      stage: "success",
-      stage_date: "2019-04-18 12:00:00",
       extra_info: faker.lorem.paragraph(),
       createdAt: "2019-04-18 12:00:00",
       updatedAt: "2019-04-18 12:00:00",
@@ -138,8 +114,6 @@ module.exports = {
       Employee_concluded_id: 1
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
-      stage: "success",
-      stage_date: "2019-05-18 12:00:00",
       extra_info: faker.lorem.paragraph(),
       createdAt: "2019-05-18 12:00:00",
       updatedAt: "2019-05-18 12:00:00",
@@ -149,8 +123,6 @@ module.exports = {
       Employee_concluded_id: 3
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
-      stage: "success",
-      stage_date: "2019-05-18 12:00:00",
       extra_info: faker.lorem.paragraph(),
       createdAt: "2019-05-18 12:00:00",
       updatedAt: "2019-05-18 12:00:00",
@@ -160,8 +132,6 @@ module.exports = {
       Employee_concluded_id: 3
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
-      stage: "new",
-      stage_date: "2018-12-18 12:00:00",
       extra_info: faker.lorem.paragraph(),
       createdAt: "2018-12-18 12:00:00",
       updatedAt: "2018-12-18 12:00:00",
@@ -171,8 +141,6 @@ module.exports = {
       Employee_concluded_id: 3
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
-      stage: "new",
-      stage_date: "2019-01-18 12:00:00",
       extra_info: faker.lorem.paragraph(),
       createdAt: "2018-01-18 12:00:00",
       updatedAt: "2018-01-18 12:00:00",
@@ -182,8 +150,6 @@ module.exports = {
       Employee_concluded_id: 3
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
-      stage: "new",
-      stage_date: "2019-01-18 12:00:00",
       extra_info: faker.lorem.paragraph(),
       createdAt: "2019-01-18 12:00:00",
       updatedAt: "2019-01-18 12:00:00",
@@ -193,8 +159,6 @@ module.exports = {
       Employee_concluded_id: 3
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
-      stage: "new",
-      stage_date: "2019-02-18 12:00:00",
       extra_info: faker.lorem.paragraph(),
       createdAt: "2019-02-18 12:00:00",
       updatedAt: "2019-02-18 12:00:00",
@@ -204,8 +168,6 @@ module.exports = {
       Employee_concluded_id: 3
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
-      stage: "new",
-      stage_date: "2019-03-18 12:00:00",
       extra_info: faker.lorem.paragraph(),
       createdAt: "2019-03-18 12:00:00",
       updatedAt: "2019-03-18 12:00:00",
@@ -215,8 +177,6 @@ module.exports = {
       Employee_concluded_id: 3
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
-      stage: "new",
-      stage_date: "2019-03-18 12:00:00",
       extra_info: faker.lorem.paragraph(),
       createdAt: "2019-03-18 12:00:00",
       updatedAt: "2019-03-18 12:00:00",
@@ -226,8 +186,6 @@ module.exports = {
       Employee_concluded_id: 3
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
-      stage: "new",
-      stage_date: "2019-04-18 12:00:00",
       extra_info: faker.lorem.paragraph(),
       createdAt: "2019-04-18 12:00:00",
       updatedAt: "2019-04-18 12:00:00",
@@ -237,8 +195,6 @@ module.exports = {
       Employee_concluded_id: 3
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
-      stage: "new",
-      stage_date: "2019-04-18 12:00:00",
       extra_info: faker.lorem.paragraph(),
       createdAt: "2019-04-18 12:00:00",
       updatedAt: "2019-04-18 12:00:00",
@@ -248,8 +204,6 @@ module.exports = {
       Employee_concluded_id: 3
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
-      stage: "new",
-      stage_date: "2019-04-18 12:00:00",
       extra_info: faker.lorem.paragraph(),
       createdAt: "2019-04-18 12:00:00",
       updatedAt: "2019-04-18 12:00:00",
@@ -259,8 +213,6 @@ module.exports = {
       Employee_concluded_id: 3
     }, {
       contact_number: faker.phone.phoneNumberFormat(),
-      stage: "new",
-      stage_date: "2019-05-18 12:00:00",
       extra_info: faker.lorem.paragraph(),
       createdAt: "2019-05-18 12:00:00",
       updatedAt: "2019-05-18 12:00:00",
@@ -268,7 +220,7 @@ module.exports = {
       Teacher_id: 3,
       Client_id: 3,
       Employee_concluded_id: 3
-    }, ], {});
+    }], {});
   },
 
   down: (queryInterface, Sequelize) => {

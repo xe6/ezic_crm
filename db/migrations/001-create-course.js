@@ -26,6 +26,12 @@ module.exports = {
       quantity_students_now: {
         type: Sequelize.INTEGER
       },
+      course_start_date: {
+        type: Sequelize.DATE,
+      },
+      course_end_date: {
+        type: Sequelize.DATE
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
