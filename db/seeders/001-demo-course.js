@@ -60,6 +60,7 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete("Courses", null, {});
+    return queryInterface.sequelize.query('SET FOREIGN_KEY_CHECKS = 0', {raw: true})
+      .then(queryInterface.bulkDelete("Courses", null, {}));
   }
 };
