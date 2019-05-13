@@ -86,14 +86,16 @@ ORDER BY deal_id;`;
             Employee_concluded_id: parseInt(req.body.employeeId)
         };
 
-        const QUERY = `INSERT INTO Deals(contact_number, extra_info, Course_id, Teacher_Id, Client_Id, Employee_concluded_id)
+        const QUERY = `INSERT INTO Deals(contact_number, extra_info, Course_id, Teacher_Id, Client_Id, Employee_concluded_id, createdAt, updatedAt)
         VALUES(
             '${deal.contact_number.toString()}', 
             '${deal.extra_info.toString()}', 
             ${deal.Course_id}, 
             ${deal.Teacher_Id}, 
             ${deal.Client_Id}, 
-            ${deal.Employee_concluded_id}
+            ${deal.Employee_concluded_id},
+            CURRENT_TIMESTAMP(),
+            CURRENT_TIMESTAMP()
         )`;
 
         const created = await this.DB.sequelize.query(QUERY, {type: this.DB.sequelize.QueryTypes.INSERT});
