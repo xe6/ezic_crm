@@ -34,20 +34,24 @@ class AllCourses extends Component {
                     {this.state.hasData
                         ?
                         this.state.courses.map((course) => {
+                            console.log(course)
                             return <Course
                                 key={course.id}
                                 _id={course.id}
                                 _name={course.course_name}
                                 _price={course.price_per_month}
                                 _status={course.status}
+                                _stud_planned={course.quantity_students_planned}
+                                _stud_init={course.quantity_students_initial}
+                                _stud_now={course.quantity_students_now}
+                                _start_date={new Date(course.course_start_date).toString().slice(0, 15)}
+                                _end_date={new Date(course.course_end_date).toString().slice(0, 15)}
                             />
                         })
                         :
                         <h1>{this.state.errorMsg}</h1>}
                 </MDBRow>
             </React.Fragment>
-
-
         )
     }
 }
