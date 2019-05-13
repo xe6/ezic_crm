@@ -14,6 +14,7 @@ router.get('/', (req, res) => res.json({ msg: "Hi!" }));
 
 //Deals
 router.get('/deals', (req, res) => DealsController.getAll(req, res));
+router.get('/deals/:id', (req, res) => DealsController.getById(req, res));
 
 //Teachers
 router.get('/teachers', (req, res) => TeachersController.getAll(req, res));

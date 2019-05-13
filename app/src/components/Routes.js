@@ -9,6 +9,7 @@ import AllTeachersPage from './pages/AllTeachersPage';
 import AllChartsPage from "./pages/AllChartsPage";
 import AllClientsPage from './pages/AllClientsPage';
 import AllDealsPage from "./pages/AllDealsPage";
+import Deal from './stateless/Deal';
 
 class Routes extends React.Component {
   render() {
@@ -16,6 +17,7 @@ class Routes extends React.Component {
       <Switch>
         <Route path='/' exact component={IntroPage} />
         <Route path='/deals' exact component={AllDealsPage} />
+        <Route path='/deals/:id' exact component={Deal} />
         <Route path='/clients' exact component={AllClientsPage} />
         <Route path='/teachers' component={AllTeachersPage} />
         <Route path='/dashboard' component={DashboardPage} />

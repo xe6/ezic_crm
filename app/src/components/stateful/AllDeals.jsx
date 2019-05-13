@@ -8,7 +8,8 @@ import {
   MDBBtn,
   MDBModal,
   MDBModalHeader,
-  MDBModalBody
+  MDBModalBody,
+  NavLink
 } from "mdbreact";
 
 class AllDeals extends Component {
@@ -42,7 +43,7 @@ class AllDeals extends Component {
   };
 
   componentDidMount() {
-     this.fetchDeals();
+    this.fetchDeals();
   }
 
   render() {
@@ -77,26 +78,16 @@ class AllDeals extends Component {
                       <td>{deal.teacher}</td>
                       <td>{deal.client}</td>
                       <td>{deal.employee_concluded}</td>
-                      <MDBBtn
-                        outline
-                        color="info"
-                        onClick={this.toggle("Edit", deal.id)}
-                      >
-                        Edit
-                      </MDBBtn>
-                      <MDBBtn
-                        outline
-                        color="danger"
-                        onClick={this.toggle("Delete", deal.id)}
-                      >
-                        Delete
-                      </MDBBtn>
+
+                      <div className="text-center">
+                        <MDBBtn outline color="primary" onClick={(e) => this.showDeal(deal.deal_id)}>SHOW</MDBBtn>
+                      </div>
                     </tr>
                   );
                 })
               ) : (
-                <h1>{this.state.errorMsg}</h1>
-              )}
+                  <h1>{this.state.errorMsg}</h1>
+                )}
             </MDBTableBody>
           </MDBTable>
         </MDBRow>
@@ -105,20 +96,25 @@ class AllDeals extends Component {
   }
 
   fetchDeals() {
-      aFetch("/secured/deals").then((srvResponse) => {
-          if (srvResponse.success) {
-              this.setState({
-                  hasData: true,
-                  deals: srvResponse.data[0]
-              });
-          } else {
-              this.setState({
-                  hasData: false,
-                  errorMsg: srvResponse.error
-              })
-          }
+    aFetch("/secured/deals").then((srvResponse) => {
+      if (srvResponse.success) {
+        this.setState({
+          hasData: true,
+          deals: srvResponse.data[0]
+        });
+      } else {
+        this.setState({
+          hasData: false,
+          errorMsg: srvResponse.error
+        })
+      }
 
-      });
+    });
+  }
+
+  showDeal(id) {
+    let url = `${window.location.href}/${id}`
+    window.location.href = url;
   }
 }
 
