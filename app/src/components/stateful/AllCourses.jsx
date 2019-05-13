@@ -15,7 +15,7 @@ class AllCourses extends Component {
             if (srvResponse.success) {
                 this.setState({
                     hasData: true,
-                    courses: srvResponse.data
+                    courses: srvResponse.data[0]
                 });
             } else {
                 this.setState({
@@ -34,7 +34,6 @@ class AllCourses extends Component {
                     {this.state.hasData
                         ?
                         this.state.courses.map((course) => {
-                            console.log(course)
                             return <Course
                                 key={course.id}
                                 _id={course.id}
@@ -44,6 +43,7 @@ class AllCourses extends Component {
                                 _stud_planned={course.quantity_students_planned}
                                 _stud_init={course.quantity_students_initial}
                                 _stud_now={course.quantity_students_now}
+                                
                                 _start_date={new Date(course.course_start_date).toString().slice(0, 15)}
                                 _end_date={new Date(course.course_end_date).toString().slice(0, 15)}
                             />

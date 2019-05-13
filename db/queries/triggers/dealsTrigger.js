@@ -5,7 +5,7 @@ const dealsInsertion = `
     FOR EACH ROW 
     BEGIN
         INSERT INTO DealsDynamics(Deal_id, stage_date, createdAt, updatedAt) 
-        VALUES(NEW.id, NEW.createdAt, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+        VALUES(NEW.id, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
     END;
 `;
 

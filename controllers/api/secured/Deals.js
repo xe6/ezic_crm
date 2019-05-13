@@ -77,45 +77,35 @@ ORDER BY deal_id;`;
     }
 
     async add(req, res) {
-        const client = {
-            contact_name: req.body.contact,
-            phone_number: req.body.phone,
-            email: req.body.email,
-            status: req.body.status
+        const deal = {
+            contact_number: req.body.contact,
+            extra_info: req.body.extra,
+            Course_id: parseInt(req.body.courseId),
+            Teacher_Id: parseInt(req.body.teacherId),
+            Client_Id: parseInt(req.body.clientId),
+            Employee_concluded_id: parseInt(req.body.employeeId)
         };
 
-        const created = await this.DB.Client.create(client);
+        const QUERY = `INSERT INTO Deals(contact_number, extra_info, Course_id, Teacher_Id, Client_Id, Employee_concluded_id)
+        VALUES(
+            '${deal.contact_number.toString()}', 
+            '${deal.extra_info.toString()}', 
+            ${deal.Course_id}, 
+            ${deal.Teacher_Id}, 
+            ${deal.Client_Id}, 
+            ${deal.Employee_concluded_id}
+        )`;
+
+        const created = await this.DB.sequelize.query(QUERY, {type: this.DB.sequelize.QueryTypes.INSERT});
 
         if (created) {
             return res.status(201).json({
                 success: true,
-                message: `Client record was added`
+                message: `Deal record was added`
             });
         }
 
         //In case the instance was not created
-
-        return res.status(500).json({
-            success: false,
-            message: "Server error occurred"
-        })
-    }
-
-    async delete(req, res) {
-        const deleted = await this.DB.Client.destroy({
-            where: {
-                id: req.body.id
-            }
-        });
-
-        if (deleted) {
-            return res.status(200).json({
-                success: true,
-                message: `Client record was deleted`
-            });
-        }
-
-        //In case the instance was not deleted
 
         return res.status(500).json({
             success: false,

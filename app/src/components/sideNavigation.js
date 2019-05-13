@@ -22,6 +22,12 @@ const TopNavigation = () => {
                         Deals
                     </MDBListGroupItem>
                 </NavLink>
+                <NavLink to="/charts" activeClassName="activeClass">
+                    <MDBListGroupItem>
+                        <MDBIcon icon="chart-bar" className="mr-3" style={{fontSize: "18px"}}/>
+                        Charts
+                    </MDBListGroupItem>
+                </NavLink>
                 <NavLink to="/clients" activeClassName="activeClass">
                     <MDBListGroupItem>
                         <MDBIcon icon="male" className="mr-3" style={{fontSize: "25px"}} />
@@ -40,24 +46,7 @@ const TopNavigation = () => {
                         Courses
                     </MDBListGroupItem>
                 </NavLink>
-                <NavLink to="/charts" activeClassName="activeClass">
-                    <MDBListGroupItem>
-                        <MDBIcon icon="chart-bar" className="mr-3" style={{fontSize: "18px"}}/>
-                        Charts
-                    </MDBListGroupItem>
-                </NavLink>
-                <NavLink to="/tables" activeClassName="activeClass">
-                    <MDBListGroupItem>
-                        <MDBIcon icon="table" className="mr-3"/>
-                        Tables
-                    </MDBListGroupItem>
-                </NavLink>
-                <NavLink to="/404" activeClassName="activeClass">
-                    <MDBListGroupItem>
-                        <MDBIcon icon="exclamation" className="mr-3"/>
-                        404
-                    </MDBListGroupItem>
-                </NavLink>
+                
             </MDBListGroup>
         </div>
     );

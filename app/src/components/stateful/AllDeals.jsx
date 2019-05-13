@@ -49,7 +49,7 @@ class AllDeals extends Component {
   render() {
     return (
       <React.Fragment>
-        <MDBBtn outline color="success">
+        <MDBBtn outline color="success" onClick={this.redirectToCreatePage}>
           Add Deal
         </MDBBtn>
 
@@ -115,6 +115,10 @@ class AllDeals extends Component {
   showDeal(id) {
     let url = `${window.location.href}/${id}`
     window.location.href = url;
+  }
+
+  redirectToCreatePage(){
+    return <NavLink to="/add"></NavLink>
   }
 }
 

@@ -18,7 +18,6 @@ const LineChart = ({data, period}) => {
                     return null
             }
         });
-        console.log(data)
     } else return <h1>Loading...</h1>
 
     const dataLine = {

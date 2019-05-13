@@ -16,10 +16,12 @@ export const aFetch = (url, params = {}) => {
     });
   }
 
-  if(!params.headers) params.headers = {
-    "Content-Type": "application/json",
-    "Authorization": token
-  };
+  if(!params.headers) {
+    params.headers = {
+      "Content-Type": "application/json",
+      "Authorization": token
+    };
+  }
   
   return fetch(url, params).then((res) => res.json());
   

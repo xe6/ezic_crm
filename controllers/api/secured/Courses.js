@@ -15,6 +15,7 @@ class Courses extends Controller {
         }
 
         if (courses) {
+            console.dir(courses);
             return res.json({
                 success: true,
                 data: courses

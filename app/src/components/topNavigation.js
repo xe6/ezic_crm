@@ -10,7 +10,9 @@ import {
   MDBIcon
 } from "mdbreact";
 
-import {Link} from "react-router-dom";
+import { ASSETS_PATH } from "../constants";
+
+import { Link } from "react-router-dom";
 
 class TopNavigation extends Component {
   state = {
@@ -33,43 +35,13 @@ class TopNavigation extends Component {
     return (
       <MDBNavbar className="flexible-navbar" dark expand="md" scrolling>
         <MDBNavbarBrand href="/">
-          <strong>EZIC</strong>
+          <strong>EZIC</strong> 
         </MDBNavbarBrand>
         <MDBNavbarToggler onClick={this.onClick} />
         <MDBCollapse isOpen={this.state.collapse} navbar>
           <MDBNavbarNav left>
             <MDBNavItem active>
               <MDBNavLink to="#">Home</MDBNavLink>
-            </MDBNavItem>
-            <MDBNavItem>
-              <a
-                rel="noopener noreferrer"
-                className="nav-link Ripple-parent"
-                href="https://mdbootstrap.com/docs/react/"
-                target="_blank"
-              >
-                About MDB
-              </a>
-            </MDBNavItem>
-            <MDBNavItem>
-              <a
-                rel="noopener noreferrer"
-                className="nav-link Ripple-parent"
-                href="https://mdbootstrap.com/docs/react/getting-started/download/"
-                target="_blank"
-              >
-                Free download
-              </a>
-            </MDBNavItem>
-            <MDBNavItem>
-              <a
-                rel="noopener noreferrer"
-                className="nav-link Ripple-parent"
-                href="https://mdbootstrap.com/bootstrap-tutorial/"
-                target="_blank"
-              >
-                Free tutorials
-              </a>
             </MDBNavItem>
           </MDBNavbarNav>
           <MDBNavbarNav right>
