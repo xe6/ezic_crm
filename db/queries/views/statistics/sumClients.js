@@ -1,35 +1,35 @@
 const sumActiveClients = `
-    create view if not exists \`Sum_active_clients\` AS         
+    create or replace view \`Sum_active_clients\` AS         
         SELECT COUNT(*) AS quantity, STATUS,
         MONTHNAME(STR_TO_DATE(EXTRACT(MONTH FROM Clients.createdAt) , '%m')) AS month_name
         FROM Clients
         WHERE (Clients.createdAt BETWEEN (
         SELECT DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
-        ) AND CURDATE())
+        ) AND CURDATE()+1)
         AND Clients.status='active'
         GROUP BY STATUS,MONTHNAME(STR_TO_DATE(EXTRACT(MONTH FROM Clients.createdAt) , '%m')) 
 `;
 
 const sumEnrolledClients = `
-    create view if not exists \`Sum_enrolled_clients\` AS         
+    create or replace view \`Sum_enrolled_clients\` AS         
         SELECT COUNT(*) AS quantity, STATUS,
         MONTHNAME(STR_TO_DATE(EXTRACT(MONTH FROM Clients.createdAt) , '%m')) AS month_name
         FROM Clients
         WHERE (Clients.createdAt BETWEEN (
-        SELECT DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
-        ) AND CURDATE())
+        SELECT DATE_SUB(CURDATE(), INTERVAL 5 MONTH)
+        ) AND CURDATE()+1)
         AND Clients.status='enrolled'
         GROUP BY STATUS,MONTHNAME(STR_TO_DATE(EXTRACT(MONTH FROM Clients.createdAt) , '%m')) 
 `;
 
 const sumGoneClients = `
-    create view if not exists \`Sum_gone_clients\` AS         
+    create or replace view \`Sum_gone_clients\` AS         
         SELECT COUNT(*) AS quantity, STATUS,
         MONTHNAME(STR_TO_DATE(EXTRACT(MONTH FROM Clients.createdAt) , '%m')) AS month_name
         FROM Clients
         WHERE (Clients.createdAt BETWEEN (
         SELECT DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
-        ) AND CURDATE())
+        ) AND CURDATE()+1)
         AND Clients.status='gone'
         GROUP BY STATUS,MONTHNAME(STR_TO_DATE(EXTRACT(MONTH FROM Clients.createdAt) , '%m')) 
 `;

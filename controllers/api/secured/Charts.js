@@ -10,6 +10,9 @@ class Charts extends Controller {
         let averageRivalsPrices = false;
         let months = false;
         try {
+            // clientsStatistics = await this.DB.sequelize.query("SELECT * FROM Clients_statistics ORDER BY ord", {
+            //     type: this.DB.sequelize.QueryTypes.SELECT
+            // });
             clientsStatistics = await this.DB.sequelize.query("SELECT * FROM Clients_statistics ORDER BY ord", {
                 type: this.DB.sequelize.QueryTypes.SELECT
             });
