@@ -10,7 +10,7 @@ module.exports = {
             },
             stage: {
                 type: Sequelize.ENUM("new", "contract_signed", "payment", "success"),
-                defaultValue: "new"
+                defaultValue: "success"
             },
             stage_date: {
                 type: Sequelize.DATE

@@ -4,8 +4,8 @@ const dealsInsertion = `
     AFTER INSERT ON Deals 
     FOR EACH ROW 
     BEGIN
-        INSERT INTO DealsDynamics(Deal_id, stage_date, createdAt, updatedAt) 
-        VALUES(NEW.id, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+        INSERT INTO DealsDynamics(Deal_id, stage, stage_date, createdAt, updatedAt) 
+        VALUES(NEW.id, 'success', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
     END;
 `;
 
