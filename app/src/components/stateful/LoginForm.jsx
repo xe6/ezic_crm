@@ -46,6 +46,7 @@ class LoginForm extends Component {
                       type="text"
                       name="login"
                       ref={this.loginRef}
+                      required
                     />
                     <MDBInput
                       label="Type your password"
@@ -55,6 +56,7 @@ class LoginForm extends Component {
                       validate
                       name="password"
                       ref={this.passwordRef}
+                      required
                     />
                   </div>
 
@@ -93,7 +95,7 @@ class LoginForm extends Component {
         <div style={{ color: "#00c851" }}>
           <MDBIcon icon="check" />
           <hr />
-          Welcome, {this.props.userData.firstName}!
+          {this.props.userData ? `Welcome,${this.props.userData.firstName}!` : "Please login"}
         </div>
       )
     }

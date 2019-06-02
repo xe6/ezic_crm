@@ -16,24 +16,37 @@ const TopNavigation = () => {
                         Dashboard
                     </MDBListGroupItem>
                 </NavLink>
-                <NavLink to="/profile" activeClassName="activeClass">
+                <NavLink to="/deals" activeClassName="activeClass">
                     <MDBListGroupItem>
-                        <MDBIcon icon="user" className="mr-3"/>
-                        Profile
+                        <MDBIcon icon="briefcase" className="mr-3" style={{fontSize: "25px"}} />
+                        Deals
                     </MDBListGroupItem>
                 </NavLink>
-                <NavLink to="/tables" activeClassName="activeClass">
+                <NavLink to="/charts" activeClassName="activeClass">
                     <MDBListGroupItem>
-                        <MDBIcon icon="table" className="mr-3"/>
-                        Tables
+                        <MDBIcon icon="chart-bar" className="mr-3" style={{fontSize: "18px"}}/>
+                        Charts
                     </MDBListGroupItem>
                 </NavLink>
-                <NavLink to="/404" activeClassName="activeClass">
+                <NavLink to="/clients" activeClassName="activeClass">
                     <MDBListGroupItem>
-                        <MDBIcon icon="exclamation" className="mr-3"/>
-                        404
+                        <MDBIcon icon="male" className="mr-3" style={{fontSize: "25px"}} />
+                        Clients
                     </MDBListGroupItem>
                 </NavLink>
+                <NavLink to="/teachers" activeClassName="activeClass">
+                    <MDBListGroupItem>
+                        <MDBIcon icon="graduation-cap" className="mr-3"/>
+                        Teachers
+                    </MDBListGroupItem>
+                </NavLink>
+                <NavLink to="/courses" activeClassName="activeClass">
+                    <MDBListGroupItem>
+                        <MDBIcon icon="chalkboard-teacher" className="mr-3"/>
+                        Courses
+                    </MDBListGroupItem>
+                </NavLink>
+                
             </MDBListGroup>
         </div>
     );

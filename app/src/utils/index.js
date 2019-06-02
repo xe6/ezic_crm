@@ -10,16 +10,19 @@ export const aFetch = (url, params = {}) => {
     return new Promise((resolve, reject) => {
       resolve({
         success: false,
-        data: null
+        data: null,
+        error: "Auth token is not supplied"
       })
     });
   }
 
-  if(!params.headers) params.headers = {
-    "Content-Type": "application/json",
-    "Authorization": token
-  };
-  
+  if(!params.headers) {
+    params.headers = {
+      "Content-Type": "application/json",
+      "Authorization": token
+    };
+  }
+
   return fetch(url, params).then((res) => res.json());
-  
+
 }

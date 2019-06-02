@@ -6,6 +6,8 @@ import Footer from './components/Footer';
 import './index.css';
 import { execWhoamiRequest } from "./redux/actions/auth";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+
 
 class App extends Component {
 
@@ -31,7 +33,7 @@ const mapStateToProps = (state) => ({
   userData: state.auth.userData
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   { execWhoamiRequest }
-)(App);
+)(App));

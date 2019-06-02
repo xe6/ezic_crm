@@ -1,8 +1,14 @@
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 
 const checkToken = (req, res, next) => {
-  let token = req.headers['x-access-token'] || req.headers['authorization']; // Express headers are auto converted to lowercase
-  if (token.startsWith('Bearer ')) {
+  let token = req.headers["x-access-token"] || req.headers["authorization"]; // Express headers are auto converted to lowercase
+  if (!token) {
+    return res.json({
+      success: false,
+      error: "Auth token is not supplied"
+    });
+  }
+  if (token.startsWith("Bearer ")) {
     // Remove Bearer from string
     token = token.slice(7, token.length);
   }
@@ -12,7 +18,7 @@ const checkToken = (req, res, next) => {
       if (err) {
         return res.json({
           success: false,
-          message: 'Token is not valid'
+          error: "Token is not valid"
         });
       } else {
         req.decoded = decoded;
@@ -22,7 +28,7 @@ const checkToken = (req, res, next) => {
   } else {
     return res.json({
       success: false,
-      message: 'Auth token is not supplied'
+      error: "Auth token is not supplied"
     });
   }
 };

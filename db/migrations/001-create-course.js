@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Courses', {
+    return queryInterface.createTable("Courses", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -15,7 +15,7 @@ module.exports = {
         type: Sequelize.ENUM("started", "in_progress")
       },
       price_per_month: {
-        type: Sequelize.FLOAT(7,2)
+        type: Sequelize.FLOAT(7, 2)
       },
       quantity_students_planned: {
         type: Sequelize.INTEGER
@@ -23,8 +23,14 @@ module.exports = {
       quantity_students_initial: {
         type: Sequelize.INTEGER
       },
-      qunatity_students_now: {
+      quantity_students_now: {
         type: Sequelize.INTEGER
+      },
+      course_start_date: {
+        type: Sequelize.DATE
+      },
+      course_end_date: {
+        type: Sequelize.DATE
       },
       createdAt: {
         allowNull: false,
@@ -37,7 +43,8 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.sequelize.query('SET FOREIGN_KEY_CHECKS = 0', {raw: true})
+    return queryInterface.sequelize
+      .query("SET FOREIGN_KEY_CHECKS = 0", { raw: true })
       .then(queryInterface.dropTable("Courses"));
   }
 };

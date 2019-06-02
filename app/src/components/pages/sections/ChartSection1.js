@@ -5,21 +5,21 @@ import { Bar, Pie } from 'react-chartjs-2';
 class ChartSection1 extends Component {
     render(){
         const dataBar = {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+            labels: ['Dec','Jan', 'Feb', 'Mar', 'Apr', 'May'],
             datasets: [
             {
-                label: '#1',
-                data: [12, 39, 3, 50, 2, 32, 84],
+                label: 'active',
+                data: [12, 39, 0, 50, 3, 32],
                 backgroundColor: 'rgba(245, 74, 85, 0.5)',
                 borderWidth: 1
             }, {
-                label: '#2',
-                data: [56, 24, 5, 16, 45, 24, 8],
+                label: 'enrolled',
+                data: [56, 24, 5, 16, 45, 24],
                 backgroundColor: 'rgba(90, 173, 246, 0.5)',
                 borderWidth: 1
             }, {
-                label: '#3',
-                data: [12, 25, 54, 3, 15, 44, 3],
+                label: 'gone',
+                data: [12, 25, 54, 3, 15, 44],
                 backgroundColor: 'rgba(245, 192, 50, 0.5)',
                 borderWidth: 1
             }
